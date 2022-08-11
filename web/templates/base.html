@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">  
+    <title>nu3-dash</title>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-dark bg-success fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand btn btn-primary text-light" href="{{url_for('user.beranda')}}">NU3-DASH</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+
+          <div class="offcanvas offcanvas-end text-bg-success" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title btn btn-info" id="offcanvasDarkNavbarLabel">MENU</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active btn btn-warning text-dark mb-3" aria-current="page" href="{{url_for('user.beranda')}}">Beranda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active btn btn-warning text-dark mb-3" href="{{url_for('user.analisis')}}">Alat Analisis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active btn btn-warning text-dark mb-3" href="{{url_for('user.dashboard_user')}}">Dashboard</a>
+                </li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        
+      </nav>
+      
+
+      <div class="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+    
+</body>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</html>

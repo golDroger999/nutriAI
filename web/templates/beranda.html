@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="katalog">
+    <div class="container">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary">SIMPLE</button>
+            <button type="button" class="btn btn-primary">FAST</button>
+            <button type="button" class="btn btn-primary">EASY</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="product row">
+        <div class="card mb-3 mx-3" style="width: 20rem;">
+            <img src="{{url_for('static', filename='/asset/analytic.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">DUBOIS</h5>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card mb-3 mx-3" style="width: 20rem;">
+            <img src="{{url_for('static', filename='/asset/dashboard.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">HARRIS BENNEDICT</h5>
+                <a href="{{url_for('user.analisis')}}" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card mb-3 mx-3" style="width: 20rem;">
+            <img src="{{url_for('static', filename='/asset/reporting.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">MIFFLIN</h5>
+                <a href="{{url_for('user.dashboard_user')}}" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        
+        <div class="card mb-3 mx-3" style="width: 20rem;">
+            <img src="{{url_for('static', filename='/asset/reporting.jpg')}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">PERKENI 2015</h5>
+                <a href="{{url_for('user.dashboard_user')}}" class="btn btn-primary">Go somewhere</a>
+            </div>
+    </div>
+
+    <div class="card mb-3 mx-3" style="width: 20rem;">
+        <img src="{{url_for('static', filename='/asset/reporting.jpg')}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">REPORTING TOOLS</h5>
+            <a href="{{url_for('user.dashboard_user')}}" class="btn btn-primary">Go somewhere</a>
+        </div>
+</div>
+<div class="card mb-3 mx-3" style="width: 20rem;">
+    <img src="{{url_for('static', filename='/asset/reporting.jpg')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">REPORTING TOOLS</h5>
+        <a href="{{url_for('user.dashboard_user')}}" class="btn btn-primary">Go somewhere</a>
+    </div>
+
+{% endblock %}

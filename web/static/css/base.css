@@ -1,0 +1,59 @@
+/* ------------------------------DESKTOP MEDIA-------------------------------- */
+
+body {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    width: auto;
+    background: radial-gradient(circle at 10% 20%, rgba(248, 246, 128, 0.459) 0%, rgba(148, 150, 244, 0.397) 90%);    
+}
+
+
+nav{
+    background: linear-gradient(135deg, rgba(121, 183, 241, 0.589) 10%, rgb(14, 91, 173) 100%);
+}
+
+.offcanvas{
+    background: linear-gradient(135deg, rgb(121, 241, 164) 10%, rgb(14, 92, 173) 100%);
+    
+}
+
+/* HALAMAN BERANDA */
+
+.katalog .btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 40px;
+}
+
+.product{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* AKHIR HALAMAN BERANDA */
+
+
+
+/* ------------------------------MOBILE MEDIA-------------------------------- */
+
+@media (max-width:650px){
+    body {
+        padding: 0;
+        margin: 0;
+        height: auto;
+        width: auto;
+    }
+
+    .product{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
