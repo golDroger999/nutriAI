@@ -28,3 +28,16 @@ class FormHarrisBenneedict(FlaskForm):
     hitung = SubmitField('Hitung', validators=[DataRequired(message='data harus diisi')])
     laporan = SubmitField('Laporan', validators=[DataRequired(message='data harus diisi')])
     
+
+class FormMifflin(FlaskForm):
+    nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
+    bb = FloatField('Berat Badan', validators=[DataRequired(message='data harus diisi')])
+    tb = FloatField('Tinggi Badan', validators=[DataRequired(message='data harus diisi')])
+    aktivitas = FloatField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
+    stress = FloatField('Faktor Stress', validators=[DataRequired(message='data harus diisi')])
+    gender = RadioField('Gender', choices=['PRIA', 'WANITA'])
+    hitung = SubmitField('Hitung', validators=[DataRequired(message='data harus diisi')])
+    laporan = SubmitField('Laporan', validators=[DataRequired(message='data harus diisi')])
+    
+    

@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-dark bg-success fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand btn btn-primary text-light" href="{{url_for('user.beranda')}}">NU3-DASH</a>
+          <a class="navbar-brand btn btn-primary text-light" href="{{url_for('beranda.beranda_page')}}">NUTRIECY</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -29,14 +29,18 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active btn btn-warning text-dark mb-3" aria-current="page" href="{{url_for('user.beranda')}}">Beranda</a>
+                  <a class="nav-link active btn btn-warning text-dark mb-3" aria-current="page" href="{{url_for('beranda.beranda_page')}}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active btn btn-warning text-dark mb-3" href="{{url_for('user.analisis')}}">Alat Analisis</a>
+                  <a class="nav-link active btn btn-warning text-dark mb-3" href="{{url_for('beranda.analisis_page')}}">Assesmen Gizi </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active btn btn-warning text-dark mb-3" href="{{url_for('user.dashboard_user')}}">Dashboard</a>
+                    <a class="nav-link active btn btn-warning text-dark mb-3" href="{{url_for('beranda.dashboard_page')}}">Dashboard</a>
                 </li>
+
+                <li class="nav-item">
+                  <a class="nav-link active btn btn-warning text-dark mb-3" href="{{url_for('beranda.dashboard_page')}}">Forum Diskusi</a>
+              </li>
                 </ul>
             </div>
           </div>
@@ -52,4 +56,5 @@
     
 </body>
 <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </html>

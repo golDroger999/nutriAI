@@ -1,5 +1,5 @@
 /* ------------------------------DESKTOP MEDIA-------------------------------- */
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Edu+NSW+ACT+Foundation:wght@500&family=Splash&display=swap');
 body {
     padding: 0;
     margin: 0;
@@ -15,7 +15,12 @@ nav{
 
 .offcanvas{
     background: linear-gradient(135deg, rgb(121, 241, 164) 10%, rgb(14, 92, 173) 100%);
-    
+
+}
+
+.navbar-brand{
+    background: linear-gradient(135deg, rgba(241, 239, 121, 0.274) 10%, rgba(14, 91, 173, 0.486) 100%);
+    font-family: 'Rubik Dirt', cursive;
 }
 
 /* HALAMAN BERANDA */
@@ -35,7 +40,35 @@ nav{
     align-items: center;
 }
 
+
+.shadow-sm{
+    background: linear-gradient(135deg, rgba(117, 40, 85, 0.37) 10%, rgba(44, 112, 36, 0.301) 100%);
+}
+
+.shadow-lg{
+    background: linear-gradient(135deg, rgba(117, 40, 85, 0.37) 10%, rgba(44, 112, 36, 0.301) 100%);
+}
+
+
+.product-sevice{
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* AKHIR HALAMAN BERANDA */
+
+/* DUBOIS */
+.dubois-form .container-fluid{
+    display: flex;
+    justify-content:center;
+    
+}
+
+.dubois-form .container-fluid .card{
+    background: rgb(183, 187, 243);
+}
+/* AKHIR DUBOIS */
 
 
 
@@ -49,11 +82,29 @@ nav{
         width: auto;
     }
 
+
+    
+
+    .banner .shadow-lg{
+        display: none;
+    }
+
     .product{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
+
+    .product-service .card{
+    display: none;
+    }
+
+
+/* DUBOIS */
+   
+/* AKHIR DUBOIS */
+    
 
 }
