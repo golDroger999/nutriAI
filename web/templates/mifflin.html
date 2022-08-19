@@ -2,15 +2,16 @@
 
 {% block content %}
 
-
-<div class="dubois-form pt-5 mt-5 mx-3 mb-5">
-    <div class="container-fluid">
-        <div class="card" style="width: 30rem;">
+<div class="dubois-form pt-5 mt-5 mx-2 mb-5 pb-5">
+    <h5 class="card-title display-6 d-flex justify-content-center pt-2 pb-4">MIFFLIN FORM</h5>
+    <div class="container-fluid d-flex justify-content-center">
+        
+        <div class="card shadow-sm mt-2" style="width: 20rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
-                <h5 class="card-title display-6">MIFFLIN FORM</h5>
+                <!-- <h5 class="card-title display-6">DUBOIS FORM</h5> -->
 
-
+                <form method="post">
                 <div class="form-input-dubois">
                     {{form.nama.label(class='form-control-label mb-1')}}
                     {{form.nama(class='form-control mb-3')}}
@@ -21,7 +22,7 @@
                     {{form.bb.label(class='form-control-label mb-1')}}
                     {{form.bb(class='bb form-control mb-3')}}
 
-                    {{form.tb.label(class='form-control-label mb-1')}}
+                    {{form.tb.label(class='form-control-label mb-2')}}
                     {{form.tb(class='tb form-control mb-3')}}
 
                     {{form.aktivitas.label(class='form-control-label mb-1')}}
@@ -31,20 +32,77 @@
                     {{form.stress(class='tidur form-control mb-3')}}
 
                     {{form.gender.label(class='form-control-label mb-1')}}
-                    {{form.gender(class='tidur form-control mb-5')}}
-
-                    
+                    {{form.gender(class='tidur form-control mb-3')}}
 
                     <div class="button-submit">
                         {{form.hitung(class='btn btn-success')}}
                         {{form.laporan(class='btn btn-danger')}}
                     </div>
                 </div>
+            </form>
+            </div>
+
+        </div>
+
+        {% if request.form.get('hitung') %}
+        <div class="result row mx-1 px-1 mt-2">
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
+                <div class="card-header">
+                    HASIL KEBUTUHAN GIZI UNTUK SATU HARI
+                </div>
+
+                <h4> DATA DIRI </h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">BERAT BADAN    :   {{bb}}</li>
+                    <li class="list-group-item">TINGGI BADAN   :   {{tb}}</li>
+                    <li class="list-group-item">JENIS KELAMIN  :   {{gender}}</li>
+                    <li class="list-group-item">UMUR           :   {{umur}}</li>
+                </ul>
+
+
+                <h4 class="mt-2"> HASIL ANALISA </h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">IMT     :   {{imt}}</li>
+                    <li class="list-group-item">BBI     :   {{bbi}}</li>
+                    <li class="list-group-item">BEE     :   {{bee}}</li>
+                    <li class="list-group-item">TEE     :   {{tee}}</li>
+                    <li class="list-group-item">PROTEIN :   {{protein}}</li>
+                    <li class="list-group-item">LEMAK   :   {{lemak}}</li>
+                    <li class="list-group-item">KARBO   :   {{karbo}}</li>
+                </ul>
+            </div>
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
+                <div class="card-header">
+                    HASIL KEBUTUHAN GIZI UNTUK SATU HARI
+                </div>
+                <ul class="list-group list-group-flush">
+                    <h4>MAKAN PAGI</h4>
+                    <li class="list-group-item">ENERGI PAGI     :   {{energi_pagi}}</li>
+                    <li class="list-group-item">PROTEIN PAGI    :   {{protein_pagi}}</li>
+                    <li class="list-group-item">LEMAK PAGI      :   {{lemak_pagi}}</li>
+                    <li class="list-group-item">KARBO PAGI      :   {{karbo_pagi}}</li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                    <h4 class="mt-2">MAKAN SIANG</h4>
+                    <li class="list-group-item">ENERGI SIANG    :   {{energi_siang}}</li>
+                    <li class="list-group-item">PROTEIN SIANG   :   {{protein_siang}}</li>
+                    <li class="list-group-item">LEMAK SIANG     :   {{lemak_siang}}</li>
+                    <li class="list-group-item">KARBO SIANG     :   {{karbo_siang}}</li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                    <h4 class="mt-2">MAKAN MALAM</h4>
+                    <li class="list-group-item">ENERGI MALAM    :   {{energi_malam}}</li>
+                    <li class="list-group-item">PROTEIN MALAM   :   {{protein_malam}}</li>
+                    <li class="list-group-item">LEMAK MALAM     :   {{lemak_malam}}</li>
+                    <li class="list-group-item">KARBO MALAM     :   {{karbo_malam}}</li>
+                </ul>
             </div>
         </div>
+        {% endif %}
     </div>
-</div>
 
+    <script src=""></script>
 
-
-{% endblock %}
+    {% endblock %}

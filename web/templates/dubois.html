@@ -2,13 +2,14 @@
 
 {% block content %}
 
-
 <div class="dubois-form pt-5 mt-5 mx-2 mb-5 pb-5">
-    <div class="container-fluid">
+    <h5 class="card-title display-6 d-flex justify-content-center pt-2 pb-4">DUBOIS FORM</h5>
+    <div class="container-fluid d-flex justify-content-center">
+        
         <div class="card shadow-sm mt-2" style="width: 20rem;">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
             <div class="card-body">
-                <h5 class="card-title display-6">DUBOIS FORM</h5>
+                <!-- <h5 class="card-title display-6">DUBOIS FORM</h5> -->
 
 
                 <div class="form-input-dubois">
@@ -31,7 +32,7 @@
                     {{form.waktu_tidur(class='tidur form-control mb-3')}}
 
                     {{form.gender.label(class='form-control-label mb-1')}}
-                    {{form.gender(class='tidur form-control mb-5')}}
+                    {{form.gender(class='tidur form-control mb-3')}}
 
                     <div class="button-submit">
                         {{form.hitung(class='btn btn-success')}}
@@ -41,15 +42,17 @@
             </div>
 
         </div>
-        <div class="result row mx-2 px-1 mt-2">
-            <div class="card mx-2" style="width: 18rem;">
+
+        {% if request.form.get('hitung') %}
+        <div class="result row mx-1 px-1 mt-2">
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
                 <div class="card-header">
                     HASIL KEBUTUHAN GIZI UNTUK SATU HARI
                 </div>
 
                 <h4> DATA DIRI </h4>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">BERAT BADAN  :</li>
+                    <li class="list-group-item">BERAT BADAN :</li>
                     <li class="list-group-item">TINGGI BADAN :</li>
                     <li class="list-group-item">JENIS KELAMIN:</li>
                     <li class="list-group-item">UMUR :</li>
@@ -61,13 +64,13 @@
                     <li class="list-group-item">IMT :</li>
                     <li class="list-group-item">BBI :</li>
                     <li class="list-group-item">BMR :</li>
-                    <li class="list-group-item">ENERGI  :</li>
+                    <li class="list-group-item">ENERGI :</li>
                     <li class="list-group-item">PROTEIN :</li>
-                    <li class="list-group-item">LEMAK   :</li>
-                    <li class="list-group-item">KARBO   :</li>
+                    <li class="list-group-item">LEMAK :</li>
+                    <li class="list-group-item">KARBO :</li>
                 </ul>
             </div>
-            <div class="card mx-2" style="width: 18rem;">
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
                 <div class="card-header">
                     HASIL KEBUTUHAN GIZI UNTUK SATU HARI
                 </div>
@@ -81,23 +84,24 @@
 
                 <ul class="list-group list-group-flush">
                     <h4 class="mt-2">MAKAN SIANG</h4>
-                    <li class="list-group-item">ENERGI PAGI :</li>
-                    <li class="list-group-item">PROTEIN PAGI :</li>
-                    <li class="list-group-item">LEMAK PAGI :</li>
-                    <li class="list-group-item">KARBO PAGI:</li>
+                    <li class="list-group-item">ENERGI SIANG :</li>
+                    <li class="list-group-item">PROTEIN SIANG :</li>
+                    <li class="list-group-item">LEMAK SIANG :</li>
+                    <li class="list-group-item">KARBO SIANG:</li>
                 </ul>
 
                 <ul class="list-group list-group-flush">
                     <h4 class="mt-2">MAKAN MALAM</h4>
-                    <li class="list-group-item">ENERGI PAGI :</li>
-                    <li class="list-group-item">PROTEIN PAGI :</li>
-                    <li class="list-group-item">LEMAK PAGI :</li>
-                    <li class="list-group-item">KARBO PAGI:</li>
+                    <li class="list-group-item">ENERGI MALAM :</li>
+                    <li class="list-group-item">PROTEIN MALAM :</li>
+                    <li class="list-group-item">LEMAK MALAM :</li>
+                    <li class="list-group-item">KARBO MALAM:</li>
                 </ul>
+            </div>
         </div>
+        {% endif %}
     </div>
-</div>
 
-<script src=""></script>
+    <script src=""></script>
 
-{% endblock %}
+    {% endblock %}

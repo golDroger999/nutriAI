@@ -63,12 +63,12 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* margin-left: 300px; */
-    
 }
 
 .dubois-form .container-fluid .card{
     background: rgb(218, 219, 245);
+    width: max-content;
+    height: fit-content;
     /* background: linear-gradient(135deg, rgba(184, 179, 250, 0.747) 10%, rgba(214, 208, 126, 0.644) 100%); */
     ;
 }
@@ -93,6 +93,9 @@ nav{
 
     .banner .shadow-lg{
         display: none;
+        padding-top: 40px;
+        width: min-content;
+        height: min-content;
     }
 
     .product{
@@ -112,8 +115,8 @@ nav{
     .dubois-form .container-fluid{
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        
+        width: min-content;
+        height: min-content;
     }
 /* AKHIR DUBOIS */
     
