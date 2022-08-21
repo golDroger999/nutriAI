@@ -54,3 +54,10 @@ class FormPerkeni(FlaskForm):
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
+    
+    
+class FormHamil():
+    pass
+
+class FormMenyusui():
+    pass

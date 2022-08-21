@@ -1,5 +1,5 @@
 from flask import (render_template, redirect, request, Blueprint, url_for)
-from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin)
+from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, FormPerkeni)
 
 
 
@@ -229,7 +229,7 @@ def mifflin_page():
 
 @beranda.route('/perkeni', methods=['GET', 'POST'])
 def perkeni_page():
-    form = FormMifflin()
+    form = FormPerkeni()
     bb =''
     tb = ''
     umur =''
