@@ -1,0 +1,180 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="dubois-form pt-5 mt-5 mx-2 mb-5 pb-5">
+    <h5 class="card-title display-6 d-flex justify-content-center pt-2 pb-4">IBU MENYUSUI FORM</h5>
+    <div class="container-fluid d-flex justify-content-center">
+
+        <div class="card shadow-sm mt-2 mb-2" style="width: 20rem;">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <!-- <h5 class="card-title display-6">DUBOIS FORM</h5> -->
+
+                <form method="post" action="">
+                    <div class="form-input-dubois">
+                        {{form.nama.label(class='form-control-label mb-1')}}
+                        {{form.nama(class='nama form-control mb-3', type='text')}}
+
+                        {{form.umur.label(class='form-control-label mb-1')}}
+                        {{form.umur(class='umur form-control mb-3', type='number')}}
+
+                        {{form.bb.label(class='form-control-label mb-1')}}
+                        {{form.bb(class='bb form-control mb-3', type='number', step='0.1')}}
+
+                        {{form.tb.label(class='form-control-label mb-2')}}
+                        {{form.tb(class='tb form-control mb-3', type='number', step='0.1')}}
+
+                        {{form.aktivitas.label(class='form-control-label mb-1')}}
+                        {{form.aktivitas(class='aktivitas form-control mb-3', step='0.1')}}
+
+                        <!-- {{form.stress.label(class='form-control-label mb-1')}} -->
+                        <!-- {{form.stress(class='stress form-control mb-3', type='number', step='0.1')}} -->
+
+                        {{form.gender.label(class='form-control-label mb-1')}}
+                        {{form.gender(class='gender form-control mb-3', type='text')}}
+
+                        <div class="button-submit">
+                            {{form.hitung(class='hitung btn btn-success', type='submit')}}
+                            {{form.laporan(class='laporan btn btn-danger', type='submit')}}
+                            <!-- {{form.save(class='btn btn-warning')}} -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        {% if request.form.get('hitung') %}
+        <div class="result row mx-1 px-1 mt-2">
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
+                <div class="card-header">
+                    HASIL KEBUTUHAN GIZI UNTUK SATU HARI
+                </div>
+
+                <h4> DATA DIRI </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BERAT BADAN
+                        <span class="badge bg-info text-dark  fs-6">{{bb}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        TINGGI BADAN
+                        <span class="badge bg-info text-dark  fs-6">{{tb}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        UMUR
+                        <span class="badge bg-info text-dark  fs-6">{{umur}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        GENDER
+                        <span class="badge bg-info text-dark  fs-6">{{gender}}</span>
+                    </li>
+                </ul>
+
+
+                <h4 class="mt-2"> HASIL ANALISA </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        IMT
+                        <span class="badge bg-info text-dark  fs-6">{{imt}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BBI
+                        <span class="badge bg-info text-dark  fs-6">{{bbi}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BEE
+                        <span class="badge bg-info text-dark  fs-6">{{bee}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        TEE
+                        <span class="badge bg-info text-dark  fs-6">{{tee}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PROTEIN
+                        <span class="badge bg-info text-dark  fs-6">{{protein}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        LEMAK
+                        <span class="badge bg-info text-dark  fs-6">{{lemak}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KARBO
+                        <span class="badge bg-info text-dark  fs-6">{{karbo}}</span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
+                <div class="card-header">
+                    HASIL KEBUTUHAN GIZI UNTUK SEKALI MAKAN
+                </div>
+                <ul class="list-group">
+                    <h4>MAKAN PAGI</h4>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ENERGI
+                        <span class="badge bg-info text-dark  fs-6">{{energi_pagi}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PROTEIN
+                        <span class="badge bg-info text-dark  fs-6">{{protein_pagi}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        LEMAK
+                        <span class="badge bg-info text-dark  fs-6">{{lemak_pagi}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KARBO
+                        <span class="badge bg-info text-dark  fs-6">{{karbo_pagi}}</span>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                    <h4 class="mt-2">MAKAN SIANG</h4>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ENERGI
+                        <span class="badge bg-info text-dark  fs-6">{{energi_siang}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PROTEIN
+                        <span class="badge bg-info text-dark  fs-6">{{protein_siang}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        LEMAK
+                        <span class="badge bg-info text-dark  fs-6">{{lemak_siang}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KARBO
+                        <span class="badge bg-info text-dark  fs-6">{{karbo_siang}}</span>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                    <h4 class="mt-2">MAKAN MALAM</h4>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ENERGI
+                        <span class="badge bg-info text-dark  fs-6">{{energi_malam}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PROTEIN
+                        <span class="badge bg-info text-dark  fs-6">{{protein_malam}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        LEMAK
+                        <span class="badge bg-info text-dark  fs-6">{{lemak_malam}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KARBO
+                        <span class="badge bg-info text-dark  fs-6">{{karbo_malam}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src=""></script>
+
+    {% endblock %}

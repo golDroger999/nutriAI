@@ -5,22 +5,40 @@ from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, For
 
 beranda = Blueprint('beranda', __name__)
 
+
+
+# HALAMAN BERANDA 
 @beranda.route('/beranda')
 @beranda.route('/')
 def beranda_page():
     return render_template('beranda.html', tittle='NUTRIECY')
+# AKHIR HALAMAN BERANDA
 
 
+
+
+
+# HALAMAN ROBOT
 @beranda.route('/alat-analisis')
 def robot_page():
     return render_template('alat_analisis.html', tittle='ANALISIS GIZI')
+# AKHIR HALAMAN ROBOT
 
 
+
+
+
+# HALAMAN SPREADSHEET TOOL
 @beranda.route('/dashboard-page')
 def spreadsheet_page():
     return render_template('dashboard.html', tittle='DASHBOARD')
+# AKHIR HALAMAN SPREADSHEET TOOL
 
 
+
+
+
+# HALAMANAN FORM DUBOIS
 @beranda.route('/dubois')
 def dubois_page():
     form = FormDubois() 
@@ -52,9 +70,28 @@ def dubois_page():
     lemak_malam = ''
     karbo_malam = ''
     
+    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form  and 'aktivitas' in request.form:
+        bb = float(request.form.get('bb'))
+        tb = float(request.form.get('tb'))
+        umur = int(request.form.get('umur'))
+        gender = request.form.get('gender')
+        stress = float(request.form.get('stress'))
+        aktivitas = float(request.form.get('aktivitas'))
+        
+    if request.form.get('hitung'):
+        bb = float(request.form.get('bb'))
+        tb = float(request.form.get('tb'))
+        umur = int(request.form.get('umur'))
+        gender = request.form.get('gender')
+    
     return render_template('dubois.html', form=form, tittle='DUBOIS')
+# AKHIR HALAMANAN FORM DUBOIS
 
 
+
+
+
+# HALAMAN FORM HARRIS BENEDICT
 @beranda.route('/harris-bennedict', methods=['POST', 'GET'])
 def harris_bennedict_page():
     form = FormHarrisBenneedict()
@@ -139,8 +176,13 @@ def harris_bennedict_page():
                            lemak_siang=lemak_siang, karbo_siang=karbo_siang,
                            energi_malam=energi_malam, protein_malam=protein_malam,
                            lemak_malam=lemak_malam, karbo_malam=karbo_malam)
-
-
+# AKHIR HALAMAN FORM HARRIS BENEDICT
+  
+  
+  
+    
+    
+# HALAMAN FORM MIFFLIN    
 @beranda.route('/mifflin', methods=['POST', 'GET'])
 def mifflin_page():
     form = FormMifflin()
@@ -225,8 +267,13 @@ def mifflin_page():
                            lemak_siang=lemak_siang, karbo_siang=karbo_siang,
                            energi_malam=energi_malam, protein_malam=protein_malam,
                            lemak_malam=lemak_malam, karbo_malam=karbo_malam)
+# AKHIR HALAMAN FORM MIFFLIN    
+   
+   
+   
     
-
+    
+# HALAMAN FORM PERKENI 
 @beranda.route('/perkeni', methods=['GET', 'POST'])
 def perkeni_page():
     form = FormPerkeni()
@@ -258,12 +305,11 @@ def perkeni_page():
     lemak_malam = ''
     karbo_malam = ''
     
-    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form and 'stress' in request.form and 'aktivitas' in request.form:
+    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form  and 'aktivitas' in request.form:
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))
         gender = request.form.get('gender')
-        stress = float(request.form.get('stress'))
         aktivitas = float(request.form.get('aktivitas'))
         
     if request.form.get('hitung'):
@@ -312,11 +358,24 @@ def perkeni_page():
                            lemak_siang=lemak_siang, karbo_siang=karbo_siang,
                            energi_malam=energi_malam, protein_malam=protein_malam,
                            lemak_malam=lemak_malam, karbo_malam=karbo_malam)
+# AKHIR HALAMAN FORM PERKENI 
+  
+  
+  
     
+    
+# HALAMAN FORM IBU HAMIL      
 @beranda.route('/gizi-ibu-hamil')
 def gizihamil_page():
     return 'pass'
+# AKHIR HALAMAN FORM IBU HAMIL
 
+
+
+
+
+# HALAMAN FORM IBU MENYUSUI
 @beranda.route('/gizi-ibu-menyusui')
 def gizimenyusui_page():
     return 'pass'
+# AKHIR HALAMAN FORM IBU MENYUSUI
