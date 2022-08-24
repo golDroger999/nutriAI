@@ -4,7 +4,7 @@ from wtforms.validators import (DataRequired, Email)
 
 
 
-
+# FORM DUBOIS
 class FormDubois(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
@@ -16,7 +16,9 @@ class FormDubois(FlaskForm):
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
+# AKHIR FORM DUBOIS
 
+# FORM HARRIS BENEDICT
 class FormHarrisBenneedict(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
@@ -28,8 +30,9 @@ class FormHarrisBenneedict(FlaskForm):
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
-    
+# AKHIR FORM HARRIS BENEDICT
 
+# FORM MIFFLIN
 class FormMifflin(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
@@ -41,9 +44,9 @@ class FormMifflin(FlaskForm):
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
+# AKHIR FORM MIFFLIN
     
-    
-
+# FORM PERKENI
 class FormPerkeni(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
@@ -54,8 +57,9 @@ class FormPerkeni(FlaskForm):
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
-    
-    
+# AKHIR FORM PERKENI    
+
+# FORM IBU HAMIL    
 class FormHamil(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
@@ -63,12 +67,14 @@ class FormHamil(FlaskForm):
     tb = IntegerField('Tinggi Badan (cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
     stress = IntegerField('Faktor Stress', validators=[DataRequired(message='data harus diisi')])
+    trimester = SelectField('TRIMESTER', choices=['TRIMESTER 1', 'TRIMESTER 2','TRIMESTER 2'])
     gender = SelectField('Gender', choices=['pria', 'wanita'])
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
+# AKHIR FORM IBU HAMIL
     
-    
+# FORM IBU MENYUSUI 
 class FormMenyusui(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
@@ -76,8 +82,9 @@ class FormMenyusui(FlaskForm):
     tb = IntegerField('Tinggi Badan (cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
     stress = IntegerField('Faktor Stress', validators=[DataRequired(message='data harus diisi')])
+    siklus = SelectField('siklus', choices=['6 BULAN PERTAMA', '6 BULAN KEDUA'])
     gender = SelectField('Gender', choices=['pria', 'wanita'])
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
-    
+# AKHIR FORM IBU MENYUSUI

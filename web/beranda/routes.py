@@ -1,19 +1,5 @@
-from flask import (
-                render_template, 
-                redirect, 
-                request, 
-                Blueprint,
-                url_for
-                )
-
-from web.beranda.form import (
-                            FormDubois, 
-                            FormHarrisBenneedict,
-                            FormMifflin, 
-                            FormPerkeni,
-                            FormHamil,
-                            FormMenyusui
-                            )
+from flask import (render_template, redirect, request, Blueprint, url_for)
+from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, FormPerkeni, FormHamil, FormMenyusui)
 
 
 
@@ -470,6 +456,7 @@ def gizihamil_page():
         
         imt = round ((bb /(tb/100)**2),2)
         bbi = round (0.9 * (tb-100),2)
+        # bbih = 
     
     return render_template('hamil.html', tittle='GIZI IBU HAMIL', 
                            form=form, bb=bb, tb=tb, umur=umur, 
