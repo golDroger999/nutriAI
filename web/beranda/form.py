@@ -61,19 +61,23 @@ class FormHamil(FlaskForm):
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (cm)', validators=[DataRequired(message='data harus diisi')])
-    aktivitas = FloatField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
+    aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
+    stress = IntegerField('Faktor Stress', validators=[DataRequired(message='data harus diisi')])
     gender = SelectField('Gender', choices=['pria', 'wanita'])
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
+    
     
 class FormMenyusui(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (cm)', validators=[DataRequired(message='data harus diisi')])
-    aktivitas = FloatField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
+    aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
+    stress = IntegerField('Faktor Stress', validators=[DataRequired(message='data harus diisi')])
     gender = SelectField('Gender', choices=['pria', 'wanita'])
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
+    
