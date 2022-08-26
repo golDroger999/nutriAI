@@ -66,9 +66,9 @@ class FormHamil(FlaskForm):
     bb = IntegerField('Berat Badan (kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
-    stress = IntegerField('Faktor Stress', validators=[DataRequired(message='data harus diisi')])
-    trimester = SelectField('TRIMESTER', choices=['TRIMESTER 1', 'TRIMESTER 2','TRIMESTER 2'])
-    gender = SelectField('Gender', choices=['pria', 'wanita'])
+    tidur = IntegerField('Waktu Tidur', validators=[DataRequired(message='data harus diisi')])
+    umurhamil = IntegerField('Umur Kehamilan(minggu)',validators=[DataRequired(message='data harus diisi')] )
+    trimester = SelectField('Trimester', choices=['Trimester 1', 'Trimester 2','Trimester 3'])
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
@@ -88,3 +88,18 @@ class FormMenyusui(FlaskForm):
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
 # AKHIR FORM IBU MENYUSUI
+
+# FORM GIZI PENYAKIT GINJAL
+class FormGinjal(FlaskForm):
+    nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
+    bb = IntegerField('Berat Badan (kg)', validators=[DataRequired(message='data harus diisi')])
+    tb = IntegerField('Tinggi Badan (cm)', validators=[DataRequired(message='data harus diisi')])
+    aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
+    stress = IntegerField('Faktor Stress', validators=[DataRequired(message='data harus diisi')])
+    siklus = SelectField('siklus', choices=['6 BULAN PERTAMA', '6 BULAN KEDUA'])
+    gender = SelectField('Gender', choices=['pria', 'wanita'])
+    hitung = SubmitField('Hitung')
+    laporan = SubmitField('Laporan')
+    save = SubmitField('Save Data')
+#  AKHIR FORM GIZI PENYAKIT GINJAL

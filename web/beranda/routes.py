@@ -100,6 +100,7 @@ def dubois_page():
         aktivitas  = round((aktivitas * c_kalori),2)
         e_kalori  = round((c_kalori + aktivitas),2)
         sda = round((0.1 * e_kalori),2)
+        
         energi = round((e_kalori + sda),2)
         protein = round((0.15 * energi)/4, 2)
         lemak = round((0.25 * energi)/9, 2)   
@@ -409,18 +410,20 @@ def perkeni_page():
     
     
 # HALAMAN FORM IBU HAMIL      
-@beranda.route('/gizi-ibu-hamil')
+@beranda.route('/gizi-ibu-hamil', methods=['POST', 'GET'])
 def gizihamil_page():
     form = FormHamil()
     bb =''
     tb = ''
     umur =''
-    gender = ''
+    tidur = ''
+    umurhamil = ''
+    trimester = ''
     
     imt = ''
     bbi = ''
-    bee = ''
-    tee = ''
+    bmr = ''
+    energi = ''
     protein = ''
     lemak = ''
     karbo = ''
@@ -440,34 +443,85 @@ def gizihamil_page():
     lemak_malam = ''
     karbo_malam = ''
     
-    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form and 'stress' in request.form and 'aktivitas' in request.form:
+    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'trimester' in request.form and 'umurhamil' in request.form  and 'aktivitas' in request.form  and 'tidur' in request.form:
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))
-        gender = request.form.get('gender')
-        # stress = float(request.form.get('stress'))
+        tidur = int(request.form.get('tidur'))
         aktivitas = float(request.form.get('aktivitas'))
+        umurhamil = float(request.form.get('umurhamil'))
+        trimester = (request.form.get('trimester'))
         
     if request.form.get('hitung'):
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))
-        gender = request.form.get('gender')
+        umurhamil = float(request.form.get('umurhamil'))
+        trimester = (request.form.get('trimester'))
         
         imt = round ((bb /(tb/100)**2),2)
-        bbi = round (0.9 * (tb-100),2)
-        # bbih = 
-    
+        
+        if tb >=160:
+            bbi = tb - 110
+            
+        elif tb <=160: 
+            bbi = tb - 105
+        
+        bbi = round(bbi,2)
+        bbih = round(bbi + (umurhamil * 0.35),2)
+        bmr = round((0.90 * 24 * bbih),2)
+        koreksi_tidur = round((0.1 * tidur * bbih ),2)  
+        
+        c_kalori = round((bmr - koreksi_tidur),2)
+        aktivitas  = round((aktivitas * c_kalori),2)
+        e_kalori  = round((c_kalori + aktivitas),2)
+        sda = round((0.1 * e_kalori),2)
+        
+        if request.form.get('trimester') == 'Trimester 1':
+            energi = round((e_kalori + sda + 180 ),2)
+            protein = round((0.15 * energi)/4 + 1, 2)
+            lemak = round((0.25 * energi)/9 + 2.3, 2)   
+            karbo  = round((0.65 * energi)/4 + 25, 2) 
+            
+        elif request.form.get('trimester') == 'Trimester 2':
+            energi = round((e_kalori + sda + 300 ),2)
+            protein = round((0.15 * energi)/4 + 10, 2)
+            lemak = round((0.25 * energi)/9 + 2.3, 2)   
+            karbo  = round((0.65 * energi)/4 + 40, 2)
+            
+        elif request.form.get('trimester') == 'Trimester 3':
+            energi = round((e_kalori + sda + 300 ),2)
+            protein = round((0.15 * energi)/4 + 30, 2)
+            lemak = round((0.25 * energi)/9 + 2.3, 2)   
+            karbo  = round((0.65 * energi)/4 + 40, 2)
+        
+       
+        
+        energi_pagi = round((0.35 * energi),2)
+        protein_pagi = round((0.35 * protein),2)
+        lemak_pagi = round((0.35 * lemak),2)
+        karbo_pagi = round((0.35 * karbo),2)
+        
+        energi_siang = round((0.35 * energi),2)
+        protein_siang = round((0.35 * protein),2)
+        lemak_siang = round((0.35 * lemak),2)
+        karbo_siang = round((0.35 * karbo),2)
+        
+        energi_malam = round((0.30 * energi),2)
+        protein_malam = round((0.30 * protein),2)
+        lemak_malam = round((0.30 * lemak),2)
+        karbo_malam = round((0.30 * karbo),2)
+        
     return render_template('hamil.html', tittle='GIZI IBU HAMIL', 
-                           form=form, bb=bb, tb=tb, umur=umur, 
-                           gender=gender,imt=imt, bbi=bbi, bee=bee, tee=tee, 
+                           form=form, bb=bb, tb=tb, umur=umur, trimester=trimester, umurhamil=umurhamil, 
+                           imt=imt, bbi=bbi, bmr=bmr, energi=energi, 
                            protein=protein, lemak=lemak, karbo=karbo,
                            energi_pagi=energi_pagi, protein_pagi=protein_pagi,
                            lemak_pagi=lemak_pagi, karbo_pagi=karbo_pagi,
                            energi_siang=energi_siang, protein_siang=protein_siang,
                            lemak_siang=lemak_siang, karbo_siang=karbo_siang,
                            energi_malam=energi_malam, protein_malam=protein_malam,
-                           lemak_malam=lemak_malam, karbo_malam=karbo_malam)
+                           lemak_malam=lemak_malam, karbo_malam=karbo_malam,)
 # AKHIR HALAMAN FORM IBU HAMIL
 
 
@@ -506,26 +560,12 @@ def gizimenyusui_page():
     lemak_malam = ''
     karbo_malam = ''
     
-    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form and 'stress' in request.form and 'aktivitas' in request.form:
-        bb = float(request.form.get('bb'))
-        tb = float(request.form.get('tb'))
-        umur = int(request.form.get('umur'))
-        gender = request.form.get('gender')
-        # stress = float(request.form.get('stress'))
-        aktivitas = float(request.form.get('aktivitas'))
         
-    if request.form.get('hitung'):
-        bb = float(request.form.get('bb'))
-        tb = float(request.form.get('tb'))
-        umur = int(request.form.get('umur'))
-        gender = request.form.get('gender')
-        
-        imt = round ((bb /(tb/100)**2),2)
-        bbi = round (0.9 * (tb-100),2)
+       
     
     return render_template('menyusui.html', tittle='GIZI IBU MENYUSUI',
                            form=form, bb=bb, tb=tb, umur=umur, 
-                           gender=gender,imt=imt, bbi=bbi, bee=bee, tee=tee, 
+                           gender=gender,imt=imt, bbi=bbi, bmr=bmr, energi=energi, 
                            protein=protein, lemak=lemak, karbo=karbo,
                            energi_pagi=energi_pagi, protein_pagi=protein_pagi,
                            lemak_pagi=lemak_pagi, karbo_pagi=karbo_pagi,
