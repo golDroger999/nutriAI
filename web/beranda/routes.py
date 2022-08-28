@@ -529,18 +529,21 @@ def gizihamil_page():
 
 
 # HALAMAN FORM IBU MENYUSUI
-@beranda.route('/gizi-ibu-menyusui')
+@beranda.route('/gizi-ibu-menyusui', methods=['POST', 'GET'])
 def gizimenyusui_page():
     form = FormMenyusui()
     bb =''
     tb = ''
     umur =''
+    aktivitas = ''
+    tidur = ''
     gender = ''
+    siklus = ''
     
     imt = ''
     bbi = ''
-    bee = ''
-    tee = ''
+    bmr = ''
+    energi = ''
     protein = ''
     lemak = ''
     karbo = ''
@@ -561,11 +564,62 @@ def gizimenyusui_page():
     karbo_malam = ''
     
         
-       
+    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form and 'siklus' in request.form  and 'aktivitas' in request.form  and 'tidur' in request.form:
+        bb = float(request.form.get('bb'))
+        tb = float(request.form.get('tb'))
+        umur = int(request.form.get('umur'))
+        siklus = request.form.get('siklus')
+        aktivitas = float(request.form.get('aktivitas'))
+        tidur = int(request.form.get('tidur'))
+        
+    if request.form.get('hitung'):
+        bb = float(request.form.get('bb'))
+        tb = float(request.form.get('tb'))
+        umur = int(request.form.get('umur'))
+        tidur = int(request.form.get('tidur'))
+        
+        imt = round ((bb /(tb/100)**2),2)
+        bbi = round (0.9 * (tb-100),2)
+        
+        bmr = round((0.90 * 24 * bbi),2)
+        koreksi_tidur = round((0.1 * tidur * bbi ),2)  
+        c_kalori = round((bmr - koreksi_tidur),2)
+        aktivitas  = round((aktivitas * c_kalori),2)
+        e_kalori  = round((c_kalori + aktivitas),2)
+        sda = round((0.1 * e_kalori),2)
+        
+        if request.form.get('siklus') == '6 bulan pertama':
+            energi = round((e_kalori + sda + 330),2)
+            protein = round((0.15 * energi)/4 + 20, 2)
+            lemak = round((0.25 * energi)/9 + 2.2, 2)   
+            karbo  = round((0.65 * energi)/4 +45, 2)
+            
+        else:
+            energi = round((e_kalori + sda + 400),2)
+            protein = round((0.15 * energi)/4 + 15, 2)
+            lemak = round((0.25 * energi)/9 + 2.2, 2)   
+            karbo  = round((0.65 * energi)/4 + 55, 2)
+            
+        energi_pagi = round((0.35 * energi),2)
+        protein_pagi = round((0.35 * protein),2)
+        lemak_pagi = round((0.35 * lemak),2)
+        karbo_pagi = round((0.35 * karbo),2)
+        
+        energi_siang = round((0.35 * energi),2)
+        protein_siang = round((0.35 * protein),2)
+        lemak_siang = round((0.35 * lemak),2)
+        karbo_siang = round((0.35 * karbo),2)
+        
+        energi_malam = round((0.30 * energi),2)
+        protein_malam = round((0.30 * protein),2)
+        lemak_malam = round((0.30 * lemak),2)
+        karbo_malam = round((0.30 * karbo),2)
+        
+        
     
     return render_template('menyusui.html', tittle='GIZI IBU MENYUSUI',
                            form=form, bb=bb, tb=tb, umur=umur, 
-                           gender=gender,imt=imt, bbi=bbi, bmr=bmr, energi=energi, 
+                           imt=imt, bbi=bbi, bmr=bmr, energi=energi, 
                            protein=protein, lemak=lemak, karbo=karbo,
                            energi_pagi=energi_pagi, protein_pagi=protein_pagi,
                            lemak_pagi=lemak_pagi, karbo_pagi=karbo_pagi,
