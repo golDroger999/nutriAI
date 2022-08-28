@@ -577,6 +577,8 @@ def gizimenyusui_page():
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))
         tidur = int(request.form.get('tidur'))
+        siklus = request.form.get('siklus')
+        aktivitas = float(request.form.get('aktivitas'))
         
         imt = round ((bb /(tb/100)**2),2)
         bbi = round (0.9 * (tb-100),2)
@@ -619,7 +621,7 @@ def gizimenyusui_page():
     
     return render_template('menyusui.html', tittle='GIZI IBU MENYUSUI',
                            form=form, bb=bb, tb=tb, umur=umur, 
-                           imt=imt, bbi=bbi, bmr=bmr, energi=energi, 
+                           imt=imt, bbi=bbi, siklus=siklus, bmr=bmr, energi=energi, 
                            protein=protein, lemak=lemak, karbo=karbo,
                            energi_pagi=energi_pagi, protein_pagi=protein_pagi,
                            lemak_pagi=lemak_pagi, karbo_pagi=karbo_pagi,
