@@ -1,6 +1,6 @@
 from flask import (render_template, redirect, request, Blueprint, url_for)
 from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, FormPerkeni, FormHamil, FormMenyusui)
-
+from io import BytesIO
 
 
 beranda = Blueprint('beranda', __name__)
@@ -630,3 +630,10 @@ def gizimenyusui_page():
                            energi_malam=energi_malam, protein_malam=protein_malam,
                            lemak_malam=lemak_malam, karbo_malam=karbo_malam)
 # AKHIR HALAMAN FORM IBU MENYUSUI
+
+
+
+
+#  FORM PENYAKIT GINJAL
+
+# AKHIR FROM PENYAKIT GINJAL

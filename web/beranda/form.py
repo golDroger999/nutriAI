@@ -102,3 +102,11 @@ class FormGinjal(FlaskForm):
     laporan = SubmitField('Laporan')
     save = SubmitField('Save Data')
 #  AKHIR FORM GIZI PENYAKIT GINJAL
+
+# FORM PARU-PARU
+class FormPaurparu(FlaskForm):
+    nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
+    bb = IntegerField('Berat Badan', validators=[DataRequired(message='data harus diisi')])
+    tb = IntegerField('Tinggi Badan', validators=[DataRequired(message='data harus diisi')])
+# AKHIR FORM PARU-PARU
