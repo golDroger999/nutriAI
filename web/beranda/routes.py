@@ -1,7 +1,7 @@
 from flask import (render_template, redirect, request, Blueprint, url_for)
 from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, FormPerkeni, FormHamil, FormMenyusui)
 from io import BytesIO
-
+from docxtpl import DocxTemplate
 
 beranda = Blueprint('beranda', __name__)
 
@@ -17,32 +17,11 @@ def beranda_page():
 
 
 
-
-# HALAMAN ROBOT
-@beranda.route('/alat-analisis')
-def robot_page():
-    return render_template('alat_analisis.html', tittle='ANALISIS GIZI')
-# AKHIR HALAMAN ROBOT
-
-
-
-
-
-# HALAMAN SPREADSHEET TOOL
-@beranda.route('/dashboard-page')
-def spreadsheet_page():
-    return render_template('dashboard.html', tittle='DASHBOARD')
-# AKHIR HALAMAN SPREADSHEET TOOL
-
-
-
-
-
 # HALAMANAN FORM DUBOIS
 @beranda.route('/dubois', methods=['POST', 'GET'])
 def dubois_page():
     form = FormDubois() 
-    bb =''
+    bb ='' 
     tb = ''
     umur =''
     gender = ''
@@ -121,6 +100,17 @@ def dubois_page():
         lemak_malam = round((0.30 * lemak),2)
         karbo_malam = round((0.30 * karbo),2)
         
+        if request.form.get('laporan'):
+            doc = DocxTemplate('beranda/docxform/report.docx')
+            context = {
+                'nama'   : nama,
+                'umur'   : umur,
+                'gender' : gender,
+                'bb'     : bb,
+                'tb'     : tb, 
+            }
+            
+         
     return render_template('dubois.html', tittle='DUBOIS', form=form, bb=bb, tb=tb, umur=umur, 
                            gender=gender,imt=imt, bbi=bbi, bmr=bmr, energi=energi, 
                            protein=protein, lemak=lemak, karbo=karbo,
