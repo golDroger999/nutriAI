@@ -1,7 +1,7 @@
 from flask import (render_template, redirect, request, Blueprint, url_for, make_response)
 from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, FormPerkeni, FormHamil, FormMenyusui)
 import pdfkit
-from reportlab.pdfgen import canvas
+
 
 
 beranda = Blueprint('beranda', __name__)
