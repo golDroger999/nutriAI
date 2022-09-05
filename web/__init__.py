@@ -5,6 +5,8 @@ app.config['SECRET_KEY']='denutridash'
 
 from web.beranda.routes import beranda
 from web.adminpage.routes import admin
+from web.spreadsheet.routes import sheet
 
 app.register_blueprint(beranda)
 app.register_blueprint(admin)
+app.register_blueprint(sheet)
