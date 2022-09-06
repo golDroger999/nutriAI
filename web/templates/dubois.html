@@ -45,6 +45,7 @@
         </div>
 
         {% if request.form.get('hitung') %}
+
         <div class="result row mx-1 px-1 mt-2">
             <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
                 <div class="card-header">
@@ -55,15 +56,15 @@
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         BERAT BADAN
-                        <span class="badge bg-info text-dark  fs-6">{{bb}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{bb}} kg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         TINGGI BADAN
-                        <span class="badge bg-info text-dark  fs-6">{{tb}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{tb}} cm</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         UMUR
-                        <span class="badge bg-info text-dark  fs-6">{{umur}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{umur}} tahun</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         GENDER
@@ -80,27 +81,27 @@
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         BBI
-                        <span class="badge bg-info text-dark  fs-6">{{bbi}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{bbi}} kg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         BMR
-                        <span class="badge bg-info text-dark  fs-6">{{bmr}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{bmr}} kkal</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         ENERGI
-                        <span class="badge bg-info text-dark  fs-6">{{energi}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{energi}} kkal</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         PROTEIN
-                        <span class="badge bg-info text-dark  fs-6">{{protein}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{protein}} gr</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         LEMAK
-                        <span class="badge bg-info text-dark  fs-6">{{lemak}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{lemak}} gr</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KARBO
-                        <span class="badge bg-info text-dark  fs-6">{{karbo}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{karbo}} gr</span>
                     </li>
                 </ul>
             </div>
@@ -114,19 +115,19 @@
                     <h4>MAKAN PAGI</h4>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         ENERGI
-                        <span class="badge bg-info text-dark  fs-6">{{energi_pagi}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{energi_pagi}} kkal</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         PROTEIN
-                        <span class="badge bg-info text-dark  fs-6">{{protein_pagi}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{protein_pagi}} gr</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         LEMAK
-                        <span class="badge bg-info text-dark  fs-6">{{lemak_pagi}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{lemak_pagi}} gr</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KARBO
-                        <span class="badge bg-info text-dark  fs-6">{{karbo_pagi}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{karbo_pagi}} gr</span>
                     </li>
                 </ul>
 
@@ -134,19 +135,19 @@
                     <h4 class="mt-2">MAKAN SIANG</h4>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         ENERGI
-                        <span class="badge bg-info text-dark  fs-6">{{energi_siang}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{energi_siang}} kkal</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         PROTEIN
-                        <span class="badge bg-info text-dark  fs-6">{{protein_siang}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{protein_siang}} gr</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         LEMAK
-                        <span class="badge bg-info text-dark  fs-6">{{lemak_siang}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{lemak_siang}} gr</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KARBO
-                        <span class="badge bg-info text-dark  fs-6">{{karbo_siang}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{karbo_siang}} gr</span>
                     </li>
                 </ul>
 
@@ -154,26 +155,156 @@
                     <h4 class="mt-2">MAKAN MALAM</h4>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         ENERGI
-                        <span class="badge bg-info text-dark  fs-6">{{energi_malam}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{energi_malam}} kkal</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         PROTEIN
-                        <span class="badge bg-info text-dark  fs-6">{{protein_malam}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{protein_malam}} gr</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         LEMAK
-                        <span class="badge bg-info text-dark  fs-6">{{lemak_malam}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{lemak_malam}} gr</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KARBO
-                        <span class="badge bg-info text-dark  fs-6">{{karbo_malam}}</span>
+                        <span class="badge bg-info text-dark  fs-6">{{karbo_malam}} gr</span>
                     </li>
                 </ul>
             </div>
+
+
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
+                <div class="card-header">
+                    KEBUTUHAN GIZI MIKRO AKG MENURUT UMUR (catatan "akg diambil rentang 10 tahun")
+                </div>
+
+                <h4> VITAMIN </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN A
+                        <span class="badge bg-info text-dark  fs-6">{{vitamin_a}} re</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN D
+                        <span class="badge bg-info text-dark  fs-6">{{vitamin_d}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN E
+                        <span class="badge bg-info text-dark  fs-6">{{vitamin_e}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN K
+                        <span class="badge bg-info text-dark  fs-6">{{vitamin_k}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B1
+                        <span class="badge bg-info text-dark  fs-6">{{vitamin_b1}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B2
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B3
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B5
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B6
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B12
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        FOLAT
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BIOTIN
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KOLIN
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN C
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                </ul>
+
+                <h4> MINERAL </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KALSIUM
+                        <span class="badge bg-info text-dark  fs-6">{{bb}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        FOSFOR
+                        <span class="badge bg-info text-dark  fs-6">{{tb}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        MAGNESIUM
+                        <span class="badge bg-info text-dark  fs-6">{{umur}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BESI
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        IODIUM
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        SENG
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        SELENIUM
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        MANGAN
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        FLUOR
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KROMIUM
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KALIUM
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        NATRIUM
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KLOR
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        TEMBAGA
+                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                    </li>
+                </ul>
+            </div>
+
+            
+
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
 
-    <script src=""></script>
+        <script src=""></script>
 
-    {% endblock %}
+        {% endblock %}

@@ -12,6 +12,7 @@
 <div class="card shadow-sm mb-3 mx-3 mt-3">
     <div class="card-body">
         <h5>catatan pengguanaan</h5>
+        <label>perhitungan gizi menggunakan rumus dubois dengan faktor aktivitas 50% dan koreksi tidur 8jam</label>
         <ul class="list-group">
             <h6>UPLOAD FILE HARUS BERFORMAT CSV [.csv]</h6>
             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -34,7 +35,7 @@
     </div>
 </div>
 
-    <div class="upload-csv pt-1 mt-3 ">
+    <div class="upload-csv pt-1 mt-3 mb-5 pb-5">
         <div class="card shadow-sm mb-3 mx-3">
             <div class="card-body">
                 <h5 class="card-title">UPLOAD CSV FILE</h5>
@@ -42,7 +43,7 @@
                     {{form.csv.label(class='form-control-label mb-1')}}
                     {{form.csv(class='csv form-control mb-3', type='file')}}
                 </div>
-                {{form.analisa(class='btn btn-success')}}
+                {{form.analisa(class='analisa btn btn-success')}}
             </div>
         </div>
     </div>

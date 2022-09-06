@@ -8,9 +8,21 @@ sheet = Blueprint('sheet', __name__)
 
 
 
-# HALAMAN DASHBOARD SPREADSHEET
+# HALAMAN DASHBOARD CSV
 @sheet.route('/csv-tools', methods=['GET', 'POST'])
 def csv_page():
     form = csv_form()
     return render_template('spreadsheet.html', form=form)
-#  AKHIR HALAMAN DASHBOARD SPREADSHEET
+#  AKHIR HALAMAN DASHBOARD CSV
+
+
+
+
+
+
+# HALAMAN DASHBOARD CSV
+@sheet.route('/csv-tools', methods=['GET', 'POST'])
+def excel_page():
+    form = csv_form()
+    return render_template('spreadsheet.html', form=form)
+#  AKHIR HALAMAN DASHBOARD CSV

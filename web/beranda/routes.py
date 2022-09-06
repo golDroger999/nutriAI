@@ -50,6 +50,37 @@ def dubois_page():
     lemak_malam = ''
     karbo_malam = ''
     
+    vitamin_a = ''
+    vitamin_d = ''
+    vitamin_e = ''
+    vitamin_k = ''
+    vitamin_b1 = ''
+    vitamin_b2 = '' 
+    vitamin_b3 = '' 
+    vitamin_b5 = '' 
+    vitamin_b6 = '' 
+    vitamin_b12 =''
+    folat   = ''
+    biotin = ''
+    kolin = ''
+    vitamin_c = ''
+    
+    kalsium   = ''
+    fosfor    = ''
+    magnesium = ''
+    besi      = ''
+    iodium    = ''
+    seng      = ''
+    selenium  = ''
+    mangan    = ''
+    fluor     = ''
+    kromium   = ''
+    kalium    = '' 
+    natrium   = ''
+    klor      = ''
+    tembaga   = ''
+        
+    
     if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form  and 'aktivitas' in request.form  and 'tidur' in request.form:
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
@@ -62,7 +93,7 @@ def dubois_page():
         imt = round ((bb /(tb/100)**2),2)
         bbi = round (0.9 * (tb-100),2)
 
-        if request.form.get('gender') == 'pria':
+        if gender == 'pria':
             bmr = 1 * 24 * bbi
         else:
             bmr = 0.90 * 24 * bbi
@@ -93,8 +124,138 @@ def dubois_page():
         protein_malam = round((0.30 * protein),2)
         lemak_malam = round((0.30 * lemak),2)
         karbo_malam = round((0.30 * karbo),2)
+        
 
+        if gender == 'pria':
+            if umur <= 10 and  umur >= 12:
+                # vitamin
+                vitamin_a = 600
+                vitamin_d = 15
+                vitamin_e = 11
+                vitamin_k = 35
+                vitamin_b1 = 1.1
+                vitamin_b2 = 1.3
+                vitamin_b3 = 12
+                vitamin_b5 = 5.0
+                vitamin_b6 = 1.3
+                vitamin_b12 = 3.5
+                folat     = 400
+                biotin    = 20
+                kolin     = 375
+                vitamin_c = 50
 
+                # mineral 
+                kalsium   = 1200
+                fosfor    = 1250
+                magnesium = 160 
+                besi      = 8
+                iodium    = 120
+                seng      = 8
+                selenium  = 22
+                mangan    = 1.9
+                fluor     = 1.8
+                kromium   = 28 
+                kalium    = 3900
+                natrium   = 1300
+                klor      = 1900
+                tembaga   = 700
+
+            elif umur <= 13 and  umur >= 15:
+                # vitamin
+                vitamin_a = 600
+                vitamin_d = 15
+                vitamin_e = 15
+                vitamin_k = 55
+                vitamin_b1 = 1.2
+                vitamin_b2 = 1.3
+                vitamin_b3 = 16
+                vitamin_b5 = 5.0
+                vitamin_b6 = 1.3
+                vitamin_b12 = 4.0
+                folat     = 400
+                biotin    = 25
+                kolin     = 550
+                vitamin_c = 75
+
+                # mineral 
+                kalsium   = 1200
+                fosfor    = 1250
+                magnesium = 225
+                besi      = 11
+                iodium    = 150
+                seng      = 11
+                selenium  = 30
+                mangan    = 2.2
+                fluor     = 2.5
+                kromium   = 36 
+                kalium    = 4800
+                natrium   = 1500
+                klor      = 2300
+                tembaga   = 795
+
+            elif umur <= 16 and  umur >= 18:
+                # vitamin
+                vitamin_a = 700
+                vitamin_d = 15
+                vitamin_e = 15
+                vitamin_k = 55
+                vitamin_b1 = 1.2
+                vitamin_b2 = 1.3
+                vitamin_b3 = 16
+                vitamin_b5 = 5.0
+                vitamin_b6 = 1.3
+                vitamin_b12 = 4.0
+                folat     = 400
+                biotin    = 30
+                kolin     = 550
+                vitamin_c = 90
+                
+                # mineral 
+                kalsium   = 1200
+                fosfor    = 1250
+                magnesium = 270
+                besi      = 11
+                iodium    = 150
+                seng      = 11
+                selenium  = 36
+                mangan    = 2.3
+                fluor     = 2.5
+                kromium   = 36 
+                kalium    = 5300
+                natrium   = 1700
+                klor      = 2500
+                tembaga   = 890
+    
+        # vitamin_a = vitamin_a
+        # vitamin_d = vitamin_d
+        # vitamin_e = vitamin_e
+        # vitamin_k = vitamin_k
+        # vitamin_b1 = vitamin_b1
+        # vitamin_b2 = vitamin_b2 
+        # vitamin_b3 = vitamin_b3 
+        # vitamin_b5 = vitamin_b5 
+        # vitamin_b6 = vitamin_b6 
+        # vitamin_b12 = vitamin_b12
+        # folat   = folat
+        # biotin = biotin
+        # kolin = kolin
+        # vitamin_c = vitamin_c
+        
+        # kalsium   = kalsium
+        # fosfor    = fosfor
+        # magnesium = magnesium
+        # besi      = besi
+        # iodium    = iodium
+        # seng      = seng
+        # selenium  = selenium
+        # mangan    = mangan
+        # fluor     = fluor
+        # kromium   = kromium
+        # kalium    = kalium 
+        # natrium   = natrium
+        # klor      = klor
+        # tembaga   = tembaga
+    
     if request.form.get('laporan'):
         nama = request.form.get('nama')
         rendered = render_template('report.html', nama=nama, bb=bb, tb=tb, umur=umur, 
@@ -119,7 +280,14 @@ def dubois_page():
                            energi_siang=energi_siang, protein_siang=protein_siang,
                            lemak_siang=lemak_siang, karbo_siang=karbo_siang,
                            energi_malam=energi_malam, protein_malam=protein_malam,
-                           lemak_malam=lemak_malam, karbo_malam=karbo_malam)
+                           lemak_malam=lemak_malam, karbo_malam=karbo_malam,
+                           vitamin_a=vitamin_a, vitamin_d=vitamin_d, vitamin_e=vitamin_e, 
+                           vitamin_k=vitamin_k, vitamin_b1=vitamin_b1, vitamin_b2=vitamin_b2,
+                           vitamin_b3=vitamin_b3, vitamin_b5=vitamin_b5, vitamin_b6=vitamin_b6,
+                           vitamin_b12=vitamin_b12, folat=folat, biotin=biotin, kolin=kolin, vitamin_c=vitamin_c,
+                           kalsium=kalsium, fosfor=fosfor, magnesium=magnesium, besi=besi, iodium=iodium,
+                           seng=seng, selenium=selenium, mangan=mangan, fluor=fluor, kromium=kromium, kalium=kalium,
+                           natrium=natrium, klor=klor, tembaga=tembaga)
    
 # AKHIR HALAMANAN FORM DUBOIS
 
