@@ -4,6 +4,7 @@
 
 <div class="dubois-form pt-5 mt-5 mx-2 mb-5 pb-5">
     <h5 class="card-title display-6 d-flex justify-content-center pt-2 pb-4">DUBOIS FORM</h5>
+    <h6 class="d-flex justify-content-center">[saran penggunaan form untuk usia min 17 tahun atau lebih, kodisi sehat]</h6>
     <div class="container-fluid d-flex justify-content-center">
 
         <div class="card shadow-sm mt-2" style="width: 20rem;">
@@ -17,7 +18,7 @@
                         {{form.nama(class='nama form-control mb-3', type='text')}}
 
                         {{form.umur.label(class='form-control-label mb-1')}}
-                        {{form.umur(class='umur form-control mb-3', type='number')}}
+                        {{form.umur(class='umur form-control mb-3', type='number' ,min=10)}}
 
                         {{form.bb.label(class='form-control-label mb-1')}}
                         {{form.bb(class='bb form-control mb-3', type='number', step='0.1')}}
@@ -175,7 +176,7 @@
 
             <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
                 <div class="card-header">
-                    KEBUTUHAN GIZI MIKRO AKG MENURUT UMUR (catatan "akg diambil rentang 10 tahun")
+                    KEBUTUHAN GIZI MIKRO AKG MENURUT UMUR
                 </div>
 
                 <h4> VITAMIN </h4>
@@ -190,117 +191,116 @@
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN E
-                        <span class="badge bg-info text-dark  fs-6">{{vitamin_e}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN K
-                        <span class="badge bg-info text-dark  fs-6">{{vitamin_k}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN B1
-                        <span class="badge bg-info text-dark  fs-6">{{vitamin_b1}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN B2
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN B3
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN B5
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN B6
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN B12
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
 
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         FOLAT
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         BIOTIN
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KOLIN
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         VITAMIN C
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                 </ul>
 
-                <h4> MINERAL </h4>
+                <h4 class="mt-2"> MINERAL </h4>
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KALSIUM
-                        <span class="badge bg-info text-dark  fs-6">{{bb}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         FOSFOR
-                        <span class="badge bg-info text-dark  fs-6">{{tb}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         MAGNESIUM
-                        <span class="badge bg-info text-dark  fs-6">{{umur}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         BESI
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         IODIUM
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         SENG
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         SELENIUM
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         MANGAN
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         FLUOR
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KROMIUM
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KALIUM
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         NATRIUM
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         KLOR
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mg</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         TEMBAGA
-                        <span class="badge bg-info text-dark  fs-6">{{gender}} mcg</span>
+                        <span class="badge bg-info text-dark  fs-6"> mcg</span>
                     </li>
                 </ul>
             </div>
 
-            
 
             {% endif %}
         </div>
