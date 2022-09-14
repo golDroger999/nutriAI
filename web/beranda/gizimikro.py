@@ -204,19 +204,115 @@ class gizimikro():
     
     
     def biotin(self):
-        pass 
-    
+        if self.gender =='pria' and self.umur < 13:
+            biotin = 20
+        
+        elif self.gender =='pria' and self.umur < 16:
+            biotin = 25
+            
+        elif self.gender =='pria' and self.umur > 15:
+            biotin = 30
+            
+        elif  self.gender =='wanita' and self.umur < 13:
+            biotin = 20
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            biotin = 25
+            
+        else:
+            biotin = 30
+            
+        return biotin
+        
+        
+        
+        
     def kolin(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            kolin = 375
+            
+        elif self.gender =='pria' and self.umur > 12:
+            kolin = 550
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            kolin = 375
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            kolin = 400
+            
+        elif self.gender =='wanita' and self.umur > 15:
+            kolin = 425
+            
+        return kolin 
+    
+    
+    
     
     def vitamin_c(self):
-        pass
+        if self.gender =='pria' and self.umur < 13:
+            vitamin_c = 50
+            
+        elif self.gender =='pria' and self.umur < 16:
+            vitamin_c = 75
+            
+        elif self.gender =='pria' and self.umur > 15:
+            vitamin_c = 90
+            
+        elif self.gender =='wanita' and self.umur < 12:
+            vitamin_c = 50
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            vitamin_c = 65 
+            
+        elif self.gender =='wanita' and self.umur > 15:
+            vitamin_c = 75
+            
+        return vitamin_c 
+    
+    
+    
     
     def kalsium(self):
-        pass 
+        if self.gender =='pria' and self.umur < 19:
+            kalsium = 1200
+            
+        elif self.gender =='pria' and self.umur < 50:
+            kalsium = 1000
+            
+        elif self.gender =='pria' and self.umur > 49:
+            kalsium = 1200
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            kalsium = 1200
+            
+        elif self.gender =='wanita' and self.umur < 50:
+            kalsium = 1000
+            
+        elif self.gender =='wanita' and self.umur > 49:
+            kalsium = 1200
+             
+        return kalsium
+    
+    
+    
     
     def fosfor(self):
-        pass 
+        if self.gender =='pria' and self.umur < 19:
+            fosfor = 1250
+            
+        elif self.gender =='pria' and self.umur > 18:
+            fosfor = 700
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            fosfor = 1250
+            
+        elif self.gender =='wanita' and self.umur > 18:
+            fosfor = 700
+            
+        return fosfor
+    
+    
+    
     
     def magnesium(self):
         pass 
