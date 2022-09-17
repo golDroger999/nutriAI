@@ -315,10 +315,70 @@ class gizimikro():
     
     
     def magnesium(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            magnesium = 160
+            
+        elif self.gender =='pria' and self.umur < 16:
+            magnesium = 225
+            
+        elif self.gender =='pria' and self.umur < 19:
+            magnesium = 270
+            
+        elif self.gender =='pria' and self.umur < 65:
+            magnesium = 360
+            
+        elif self.gender =='pria' and self.umur > 64:
+            magnesium = 350
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            magnesium = 170
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            magnesium =  220
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            magnesium = 230
+            
+        elif self.gender =='wanita' and self.umur < 30:
+            magnesium = 330
+            
+        elif self.gender =='wanita' and self.umur < 65:
+            magnesium = 340
+            
+        elif self.gender =='wanita' and self.umur > 64:
+            magnesium = 320
+        
+        return magnesium
+    
+    
+    
     
     def besi(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            besi = 8
+        
+        elif self.gender =='pria' and self.umur < 19:
+            besi = 11
+            
+        elif self.gender =='pria' and self.umur > 18:
+            besi = 9 
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            besi = 8
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            besi = 15
+            
+        elif self.gender =='wnaita' and self.umur < 50: 
+            besi = 18
+            
+        elif self.gender =='wanita' and self.umur > 49:
+            besi = 8
+    
+        return besi  
+    
+    
+    
     
     def iodium(self):
         pass 
