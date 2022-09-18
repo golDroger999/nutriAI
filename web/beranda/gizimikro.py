@@ -381,31 +381,331 @@ class gizimikro():
     
     
     def iodium(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            iodium = 120
+            
+        elif self.gender =='pria' and self.umur > 12:
+            iodium = 150
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            iodium = 120
+            
+        elif self.gender =='wanita' and self.umur > 12:
+            iodium = 150
+            
+        return iodium 
+    
+    
+    
     
     def seng(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            seng = 8
+            
+        elif self.gender =='pria' and self.umur > 12:
+            seng  = 11
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            seng = 8
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            seng = 9 
+        
+        elif self.gender =='wanita' and self.umur > 18:
+            seng = 8
+            
+        return seng
+    
+    
+    
     
     def selenium(self):
-        pass
+        if self.gender =='pria' and self.umur < 13:
+            selenium = 22
+            
+        elif self.gender =='pria' and self.umur < 16:
+            selenium = 30
+            
+        elif self.gender =='pria' and self.umur < 19:
+            selenium = 36
+            
+        elif self.gender =='pria' and self.umur < 65:
+            selenium = 30
+            
+        elif self.gender =='pria' and self.umur > 64:
+            selenium = 29
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            selenium = 19
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            selenium = 24
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            selenium = 26
+            
+        elif self.gender == 'wanita' and self.umur < 30:
+            selenium = 24
+            
+        elif self.gender =='wanita' and self.umur < 65:
+            selenium = 25
+            
+        elif self.gender =='wanita' and self.umur > 64:
+            selenium = 24 
+            
+        return selenium
+    
+    
+    
     
     def mangan(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            mangan = 1.9
+            
+        elif self.gender =='pria' and self.umur < 16:
+            mangan = 2.2
+        
+        elif self.gender =='pria' and self.umur > 15:
+            mangan = 2.3
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            mangan = 1.6
+            
+        elif self.gender =='wanita' and self.umur > 15:
+            mangan = 1.8
+            
+        return mangan 
+    
+    
+    
     
     def fluor(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            fluor = 1.8
+            
+        elif self.gender =='pria' and self.umur < 16:
+            fluor = 2.5
+            
+        elif self.gender =='pria' and self.umur > 15:
+            fluor = 4.0
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            fluor = 1.9
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            fluor = 2.4
+            
+        elif self.gender =='wanita' and self.umur > 15:
+            fluor = 3.0
+            
+        return fluor  
+    
+    
+    
     
     def kromium(self):
-        pass 
-    
+        if self.gender =='pria' and self.umur < 13:
+            kromium = 28
+            
+        elif self.gender =='pria' and self.umur < 16:
+            kromium = 36
+            
+        elif self.gender =='pria' and self.umur < 19:
+            kromium = 41
+            
+        elif self.gender == 'pria' and self.umur < 30:
+            kromium = 36
+            
+        elif self.gender =='pria' and self.umur < 50:
+            kromium = 34
+            
+        elif self.gender =='pria' and self.umur < 65:
+            kromium = 29
+            
+        elif self.gender =='pria' and self.umur < 81:
+            kromium = 24
+            
+        elif self.gender =='pria' and self.umur > 80:
+            kromium = 21 
+        
+        if self.gender =='wanita' and self.umur < 13:
+            kromium = 26
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            kromium = 27
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            kromium = 29
+            
+        elif self.gender == 'wanita' and self.umur < 30:
+            kromium = 30
+            
+        elif self.gender =='wanita' and self.umur < 50:
+            kromium = 29
+            
+        elif self.gender =='wanita' and self.umur < 65:
+            kromium = 24
+            
+        elif self.gender =='wanita' and self.umur < 81:
+            kromium = 21
+            
+        elif self.gender =='wanita' and self.umur > 80:
+            kromium = 19 
+               
+        return kromium    
+               
+               
+               
+               
     def kalium(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            kalium = 3900
+            
+        elif self.gender =='pria' and self.umur < 16:
+            kalium = 4800
+        
+        elif self.gender =='pria' and self.umur < 19:
+            kalium = 5300
+            
+        elif self.gender =='pria' and self.umur > 18:
+            kalium = 4700
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            kalium = 4400
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            kalium = 4800
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            kalium = 5000
+            
+        elif self.gender =='wanita' and self.umur > 18:
+            kalium = 4700
+            
+        return kalium
+    
+    
+    
     
     def natrium(self):
-        pass 
+        if self.gender =='pria' and self.umur < 13:
+            natrium = 1300
+            
+        elif self.gender =='pria' and self.umur < 16:
+            natrium = 1500
+        
+        elif self.gender =='pria' and self.umur < 19:
+            natrium = 1700
+            
+        elif self.gender =='pria' and self.umur < 50:
+            natrium = 1500
+            
+        elif self.gender =='pria' and  self.umur < 65:
+            natrium = 1300
+            
+        elif self.gender =='pria' and self.umur < 81:
+            natrium = 1100
+            
+        elif self.gender =='pria' and self.umur > 80:
+            natrium = 1000
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            natrium = 1400
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            natrium = 1500
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            natrium = 1600
+            
+        elif self.gender =='wanita' and self.umur < 50:
+            natrium = 1500
+            
+        elif self.gender =='wanita' and self.umur < 65:
+            natrium = 1400
+            
+        elif self.gender =='wanita' and self.umur < 81:
+            natrium = 1200
+            
+        elif self.gender =='wanita' and self.umur > 80:
+            natrium = 1000
+            
+        return natrium       
+    
+    
+    
     
     def klor(self):
-        pass 
-    
+        if self.gender =='pria' and self.umur < 13: 
+            klor = 1900
+            
+        elif self.gender =='pria' and self.umur < 16:
+            klor = 2300
+            
+        elif self.gender =='pria' and self.umur < 19:
+            klor = 2500
+            
+        elif self.gender =='pria' and self.umur < 50:
+            klor = 2250
+            
+        elif self.gender =='pria' and self.umur < 65:
+            klor = 2100
+            
+        elif self.gender =='pria' and self.umur < 81:
+            klor = 1900
+            
+        elif self.gender =='pria' and self.umur > 80:
+            klor = 1600
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            klor = 2100
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            klor = 2300
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            klor = 2400
+            
+        elif self.gender =='wanita' and self.umur < 50:
+            klor = 2250
+            
+        elif self.gender =='wanita' and self.umur < 65:
+            klor = 2100
+            
+        elif self.gender =='wanita' and self.umur < 81:
+            klor = 1900
+            
+        elif self.gender =='wanita' and self.umur > 80:
+            klor = 1600
+            
+        return klor
+            
+            
+            
+            
     def tembaga(self):
-        pass
+        if self.gender =='pria' and self.umur < 13:
+            tembaga = 700
+            
+        elif self.gender =='pria' and self.umur < 16:
+            tembaga = 795
+            
+        elif self.gender =='pria' and self.umur < 19:
+            tembaga = 890
+            
+        elif self.gender =='pria' and self.umur > 18:
+            tembaga = 900
+            
+        elif self.gender =='wanita' and self.umur < 13:
+            tembaga = 700
+            
+        elif self.gender =='wanita' and self.umur < 16:
+            tembaga = 795
+            
+        elif self.gender =='wanita' and self.umur < 19:
+            tembaga = 890
+            
+        elif self.gender =='wanita' and self.umur > 18:
+            tembaga = 900
+            
+        return tembaga
