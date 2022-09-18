@@ -134,10 +134,10 @@ class gizimikro():
         elif self.gender =='pria' and self.umur > 12:
             vitamin_b3 = 16
             
-        elif self.gender =='pria' and self.umur < 13:
+        elif self.gender =='wanita' and self.umur < 13:
             vitamin_b3 = 12
             
-        elif self.gender =='pria' and self.umur > 12:
+        elif self.gender =='wanita' and self.umur > 12:
             vitamin_b3 = 14
         
         return vitamin_b3
@@ -369,7 +369,7 @@ class gizimikro():
         elif self.gender =='wanita' and self.umur < 19:
             besi = 15
             
-        elif self.gender =='wnaita' and self.umur < 50: 
+        elif self.gender =='wanita' and self.umur < 50: 
             besi = 18
             
         elif self.gender =='wanita' and self.umur > 49:
