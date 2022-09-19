@@ -1,6 +1,6 @@
 class gizimikro():
     
-    def __init__(self, umur, gender):
+    def __init__(self, umur=13, gender='pria'):
         self.umur = umur 
         self.gender = gender 
         
@@ -709,3 +709,27 @@ class gizimikro():
             tembaga = 900
             
         return tembaga
+    
+
+class gizimikro_hamil():
+    def __init__(self, umur, trimester):
+        self.umur = umur 
+        self.trimester = trimester
+        
+    
+    def vitamin_a(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_a = gizimikro(umur=self.umur, gender='wanita').vitamin_a()
+            return vitamin_a
+    def vitamin_d():
+        pass 
+    
+    def vitamin_e():
+        pass
+    
+    def vitamin_k():
+        pass
+    
+
+
+print(gizimikro_hamil(umur=12, trimester='Trimester 1').vitamin_a())

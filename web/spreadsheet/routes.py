@@ -21,8 +21,8 @@ def csv_page():
 
 
 # HALAMAN DASHBOARD CSV
-@sheet.route('/csv-tools', methods=['GET', 'POST'])
+@sheet.route('/gizi-kelompok', methods=['GET', 'POST'])
 def excel_page():
     form = csv_form()
-    return render_template('spreadsheet.html', form=form)
+    return render_template('spreadsheet.html', title='GIZI KELOMPOK', form=form)
 #  AKHIR HALAMAN DASHBOARD CSV

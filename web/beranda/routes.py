@@ -576,6 +576,36 @@ def perkeni_page():
     lemak_malam = ''
     karbo_malam = ''
     
+    vitamin_a   = ''
+    vitamin_d   = ''
+    vitamin_e   = ''
+    vitamin_k   = ''
+    vitamin_b1  = ''
+    vitamin_b2  = ''
+    vitamin_b3  = ''
+    vitamin_b5  = ''
+    vitamin_b6  = ''
+    vitamin_b12 = ''
+    folat =''
+    biotin = ''
+    kolin = ''
+    vitamin_c = ''
+    
+    kalsium =''
+    fosfor =''
+    magnesium =''
+    besi =''
+    iodium = ''
+    seng = ''
+    selenium = ''
+    mangan = ''
+    fluor = ''
+    kromium = ''
+    kalium =''
+    natrium = ''
+    klor =''
+    tembaga=''
+    
     if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form  and 'aktivitas' in request.form:
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
@@ -613,7 +643,40 @@ def perkeni_page():
         protein_malam = round((0.30 * protein),2)
         lemak_malam = round((0.30 * lemak),2)
         karbo_malam = round((0.30 * karbo),2)
-    
+        
+        
+        vitamin_a = gizimikro(umur=umur, gender=gender).vitamin_a()
+        vitamin_d = gizimikro(umur=umur, gender=gender).vitamin_d()
+        vitamin_e = gizimikro(umur=umur, gender=gender).vitamin_e()
+        vitamin_k = gizimikro(umur=umur, gender=gender).vitamin_k()
+        vitamin_b1 = gizimikro(umur=umur, gender=gender).vitamin_b1()
+        vitamin_b2 = gizimikro(umur=umur, gender=gender).vitamin_b2()
+        vitamin_b3 = gizimikro(umur=umur, gender=gender).vitamin_b3()
+        vitamin_b5 = gizimikro(umur=umur, gender=gender).vitamin_b5()
+        vitamin_b6 = gizimikro(umur=umur, gender=gender).vitamin_b6()
+        vitamin_b12 = gizimikro(umur=umur, gender=gender).vitamin_b12()
+        folat = gizimikro(umur=umur, gender=gender).folat()
+        biotin = gizimikro(umur=umur, gender=gender).biotin()
+        kolin = gizimikro(umur=umur, gender=gender).kolin()
+        vitamin_c = gizimikro(umur=umur, gender=gender).vitamin_c()
+        
+        
+        kalsium = gizimikro(umur=umur, gender=gender).kalsium()
+        fosfor = gizimikro(umur=umur, gender=gender).fosfor()
+        magnesium = gizimikro(umur=umur, gender=gender).magnesium()
+        besi = gizimikro(umur=umur, gender=gender).besi()
+        iodium = gizimikro(umur=umur, gender=gender).iodium()
+        seng = gizimikro(umur=umur, gender=gender).seng()
+        selenium = gizimikro(umur=umur, gender=gender).selenium()
+        mangan = gizimikro(umur=umur, gender=gender).mangan()
+        fluor = gizimikro(umur=umur, gender=gender).fluor()
+        kromium = gizimikro(umur=umur, gender=gender).kromium()
+        kalium = gizimikro(umur=umur, gender=gender).kalium()
+        natrium = gizimikro(umur=umur, gender=gender).natrium()
+        klor = gizimikro(umur=umur, gender=gender).klor()
+        tembaga = gizimikro(umur=umur, gender=gender).tembaga()
+        
+        
     if request.form.get('laporan'):
         nama = request.form.get('nama')
         rendered = render_template('report.html', nama=nama, bb=bb, tb=tb, umur=umur, 
@@ -640,7 +703,15 @@ def perkeni_page():
                            energi_siang=energi_siang, protein_siang=protein_siang,
                            lemak_siang=lemak_siang, karbo_siang=karbo_siang,
                            energi_malam=energi_malam, protein_malam=protein_malam,
-                           lemak_malam=lemak_malam, karbo_malam=karbo_malam)
+                           lemak_malam=lemak_malam, karbo_malam=karbo_malam,
+                           
+                           vitamin_a=vitamin_a, vitamin_d=vitamin_d, vitamin_e=vitamin_e,
+                           vitamin_k=vitamin_k, vitamin_b1=vitamin_b1, vitamin_b2=vitamin_b2,
+                           vitamin_b3=vitamin_b3, vitamin_b5=vitamin_b5, vitamin_b6=vitamin_b6,
+                           vitamin_b12=vitamin_b12, folat=folat, biotin=biotin, kolin=kolin, vitamin_c=vitamin_c,
+                           kalsium=kalsium, fosfor=fosfor, magnesium=magnesium, besi=besi, iodium=iodium,
+                           seng=seng, selenium=selenium, mangan=mangan, fluor=fluor, kromium=kromium,
+                           kalium=kalium, natrium=natrium, klor=klor, tembaga=tembaga)
 # AKHIR HALAMAN FORM PERKENI 
   
   
