@@ -1,3 +1,4 @@
+# GIZI MIKRO
 class gizimikro():
     
     def __init__(self, umur=13, gender='pria'):
@@ -709,8 +710,10 @@ class gizimikro():
             tembaga = 900
             
         return tembaga
+# AKHIR GIZI MIKRO
     
-
+    
+# GIZI MIKRO IBU HAMIL
 class gizimikro_hamil():
     def __init__(self, umur, trimester):
         self.umur = umur 
@@ -720,16 +723,251 @@ class gizimikro_hamil():
     def vitamin_a(self):
         if self.trimester == 'Trimester 1':
             vitamin_a = gizimikro(umur=self.umur, gender='wanita').vitamin_a()
-            return vitamin_a
-    def vitamin_d():
-        pass 
+            vitamin_a = vitamin_a + 300
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_a = gizimikro(umur=self.umur, gender='wanita').vitamin_a()
+            vitamin_a = vitamin_a + 300
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_a = gizimikro(umur=self.umur, gender='wanita').vitamin_a()
+            vitamin_a = vitamin_a + 300
+            
+        return vitamin_a
+        
+        
+        
+        
+    def vitamin_d(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_d = gizimikro(umur=self.umur, gender='wanita').vitamin_d()
+            vitamin_d = vitamin_d 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_d = gizimikro(umur=self.umur, gender='wanita').vitamin_d()
+            vitamin_d = vitamin_d 
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_d = gizimikro(umur=self.umur, gender='wanita').vitamin_d()
+            vitamin_d = vitamin_d 
+        
+        return vitamin_d
     
-    def vitamin_e():
-        pass
     
-    def vitamin_k():
-        pass
     
+        
+    def vitamin_e(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_e = gizimikro(umur=self.umur, gender='wanita').vitamin_e()
+            vitamin_e = vitamin_e 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_e = gizimikro(umur=self.umur, gender='wanita').vitamin_e()
+            vitamin_e = vitamin_e 
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_e = gizimikro(umur=self.umur, gender='wanita').vitamin_e()
+            vitamin_e = vitamin_e 
+        
+        return vitamin_e
+    
+    
+    
+    
+    def vitamin_k(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_k = gizimikro(umur=self.umur, gender='wanita').vitamin_k()
+            vitamin_k = vitamin_k 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_k = gizimikro(umur=self.umur, gender='wanita').vitamin_k()
+            vitamin_k = vitamin_k 
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_k = gizimikro(umur=self.umur, gender='wanita').vitamin_k()
+            vitamin_k = vitamin_k 
+        
+        return vitamin_k
+    
+    
+    
+    def vitamin_b1(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_b1 = gizimikro(umur=self.umur, gender='wanita').vitamin_b1()
+            vitamin_b1 = vitamin_b1 + 0.3 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_b1 = gizimikro(umur=self.umur, gender='wanita').vitamin_b1()
+            vitamin_b1 = vitamin_b1 + 0.3
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_b1 = gizimikro(umur=self.umur, gender='wanita').vitamin_b1()
+            vitamin_b1 = vitamin_b1 + 0.3
+        
+        return round(vitamin_b1,2)
+    
+    
+    
+    
+    def vitamin_b2(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_b2 = gizimikro(umur=self.umur, gender='wanita').vitamin_b2()
+            vitamin_b2 = vitamin_b2 + 0.3 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_b2 = gizimikro(umur=self.umur, gender='wanita').vitamin_b2()
+            vitamin_b2 = vitamin_b2 + 0.3
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_b2 = gizimikro(umur=self.umur, gender='wanita').vitamin_b2()
+            vitamin_b2 = vitamin_b2 + 0.3
+        
+        return round(vitamin_b2,2)
+    
+    
+    
+    
+    def vitamin_b3(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_b3 = gizimikro(umur=self.umur, gender='wanita').vitamin_b3()
+            vitamin_b3 = vitamin_b3 + 4 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_b3 = gizimikro(umur=self.umur, gender='wanita').vitamin_b3()
+            vitamin_b3 = vitamin_b3 + 4
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_b3 = gizimikro(umur=self.umur, gender='wanita').vitamin_b3()
+            vitamin_b3 = vitamin_b3 + 4
+        
+        return round(vitamin_b3,2)
+    
+    
+    
+    
+    def vitamin_b5(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_b5 = gizimikro(umur=self.umur, gender='wanita').vitamin_b5()
+            vitamin_b5 = vitamin_b5 + 1 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_b5 = gizimikro(umur=self.umur, gender='wanita').vitamin_b5()
+            vitamin_b5 = vitamin_b5 + 1
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_b5 = gizimikro(umur=self.umur, gender='wanita').vitamin_b5()
+            vitamin_b5 = vitamin_b5 + 1
+    
+        return round(vitamin_b5,2)
+    
+    
+    
+    
+    def vitamin_b6(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_b6 = gizimikro(umur=self.umur, gender='wanita').vitamin_b6()
+            vitamin_b6 = vitamin_b6 + 0.6 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_b6 = gizimikro(umur=self.umur, gender='wanita').vitamin_b6()
+            vitamin_b6 = vitamin_b6 + 0.6
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_b6 = gizimikro(umur=self.umur, gender='wanita').vitamin_b6()
+            vitamin_b6 = vitamin_b6 + 0.6
+    
+        return round(vitamin_b6,2)
 
 
-print(gizimikro_hamil(umur=12, trimester='Trimester 1').vitamin_a())
+
+
+    def vitamin_b12(self):
+        if self.trimester == 'Trimester 1':
+            vitamin_b12 = gizimikro(umur=self.umur, gender='wanita').vitamin_b12()
+            vitamin_b12 = vitamin_b12 + 0.5 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_b12 = gizimikro(umur=self.umur, gender='wanita').vitamin_b12()
+            vitamin_b12 = vitamin_b12 + 0.5
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_b12 = gizimikro(umur=self.umur, gender='wanita').vitamin_b12()
+            vitamin_b12 = vitamin_b12 + 0.5
+    
+        return round(vitamin_b12,2)
+
+
+
+
+    def folat(self):
+        if self.trimester == 'Trimester 1':
+            folat = gizimikro(umur=self.umur, gender='wanita').folat()
+            folat = folat + 200 
+        
+        elif self.trimester == 'Trimester 2':
+            folat = gizimikro(umur=self.umur, gender='wanita').folat()
+            folat = folat + 200
+        
+        elif self.trimester == 'Trimester 3':
+            folat = gizimikro(umur=self.umur, gender='wanita').folat()
+            folat = folat + 200
+    
+        return round(folat,2)
+
+
+
+
+    def biotin(self):
+        if self.trimester == 'Trimester 1':
+            biotin = gizimikro(umur=self.umur, gender='wanita').biotin()
+            biotin = biotin  
+        
+        elif self.trimester == 'Trimester 2':
+            biotin = gizimikro(umur=self.umur, gender='wanita').biotin()
+            biotin = biotin 
+        
+        elif self.trimester == 'Trimester 3':
+            biotin = gizimikro(umur=self.umur, gender='wanita').biotin()
+            biotin = biotin 
+        
+        return biotin    
+        
+        
+        
+        
+    def kolin(self):    
+        if self.trimester == 'Trimester 1':
+            kolin = gizimikro(umur=self.umur, gender='wanita').kolin()
+            kolin = kolin + 25 
+        
+        elif self.trimester == 'Trimester 2':
+            kolin = gizimikro(umur=self.umur, gender='wanita').kolin()
+            kolin = kolin + 25
+        
+        elif self.trimester == 'Trimester 3':
+            kolin = gizimikro(umur=self.umur, gender='wanita').kolin()
+            kolin = kolin + 25
+            
+        return kolin
+            
+            
+            
+            
+    def vitamin_c(self):    
+        if self.trimester == 'Trimester 1':
+            vitamin_c = gizimikro(umur=self.umur, gender='wanita').vitamin_c()
+            vitamin_c = vitamin_c + 10 
+        
+        elif self.trimester == 'Trimester 2':
+            vitamin_c = gizimikro(umur=self.umur, gender='wanita').vitamin_c()
+            vitamin_c = vitamin_c + 10
+        
+        elif self.trimester == 'Trimester 3':
+            vitamin_c = gizimikro(umur=self.umur, gender='wanita').vitamin_c()
+            vitamin_c = vitamin_c + 10
+
+        return vitamin_c
+    
+
+print(gizimikro_hamil(umur=18, trimester='Trimester 1').vitamin_c())
+
