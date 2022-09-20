@@ -1,7 +1,7 @@
 from flask import (render_template, redirect, request, Blueprint, url_for, make_response)
 from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, FormPerkeni, FormHamil, FormMenyusui)
 import pandas as pd
-from web.beranda.gizimikro import gizimikro
+from web.beranda.gizimikro import (gizimikro, gizimikro_hamil)
 import pdfkit
 
 
@@ -731,6 +731,7 @@ def gizihamil_page():
     
     imt = ''
     bbi = ''
+    bbih = ''
     bmr = ''
     energi = ''
     protein = ''
@@ -751,6 +752,37 @@ def gizihamil_page():
     protein_malam = ''
     lemak_malam = ''
     karbo_malam = ''
+    
+    vitamin_a   = ''
+    vitamin_d   = ''
+    vitamin_e   = ''
+    vitamin_k   = ''
+    vitamin_b1  = ''
+    vitamin_b2  = ''
+    vitamin_b3  = ''
+    vitamin_b5  = ''
+    vitamin_b6  = ''
+    vitamin_b12 = ''
+    folat =''
+    biotin = ''
+    kolin = ''
+    vitamin_c = ''
+    
+    kalsium =''
+    fosfor =''
+    magnesium =''
+    besi =''
+    iodium = ''
+    seng = ''
+    selenium = ''
+    mangan = ''
+    fluor = ''
+    kromium = ''
+    kalium =''
+    natrium = ''
+    klor =''
+    tembaga=''
+    
     
     if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'trimester' in request.form and 'umurhamil' in request.form  and 'aktivitas' in request.form  and 'tidur' in request.form:
         bb = float(request.form.get('bb'))
@@ -814,6 +846,37 @@ def gizihamil_page():
         lemak_malam = round((0.30 * lemak),2)
         karbo_malam = round((0.30 * karbo),2)
      
+        vitamin_a = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_a()
+        vitamin_d = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_d()
+        vitamin_e = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_e()
+        vitamin_k = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_k()
+        vitamin_b1 = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_b1()
+        vitamin_b2 = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_b2()
+        vitamin_b3 = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_b3()
+        vitamin_b5 = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_b5()
+        vitamin_b6 = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_b6()
+        vitamin_b12 = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_b12()
+        folat = gizimikro_hamil(umur=umur, trimester=trimester).folat()
+        biotin = gizimikro_hamil(umur=umur, trimester=trimester).biotin()
+        kolin = gizimikro_hamil(umur=umur, trimester=trimester).kolin()
+        vitamin_c = gizimikro_hamil(umur=umur, trimester=trimester).vitamin_c()
+        
+        
+        kalsium = gizimikro_hamil(umur=umur, trimester=trimester).kalsium()
+        fosfor = gizimikro_hamil(umur=umur, trimester=trimester).fosfor()
+        magnesium = gizimikro_hamil(umur=umur, trimester=trimester).magnesium()
+        besi = gizimikro_hamil(umur=umur, trimester=trimester).besi()
+        iodium = gizimikro_hamil(umur=umur, trimester=trimester).iodium()
+        seng = gizimikro_hamil(umur=umur, trimester=trimester).seng()
+        selenium = gizimikro_hamil(umur=umur, trimester=trimester).selenium()
+        mangan = gizimikro_hamil(umur=umur, trimester=trimester).mangan()
+        fluor = gizimikro_hamil(umur=umur, trimester=trimester).fluor()
+        kromium = gizimikro_hamil(umur=umur, trimester=trimester).kromium()
+        kalium = gizimikro_hamil(umur=umur, trimester=trimester).kalium()
+        natrium = gizimikro_hamil(umur=umur, trimester=trimester).natrium()
+        klor = gizimikro_hamil(umur=umur, trimester=trimester).klor()
+        tembaga = gizimikro_hamil(umur=umur, trimester=trimester).tembaga()
+        
     if request.form.get('laporan'):
         nama = request.form.get('nama')
         rendered = render_template('report.html', nama=nama, bb=bb, tb=tb, umur=umur, 
@@ -830,16 +893,25 @@ def gizihamil_page():
         response =  make_response(pdf)
         response.headers['Content-Type'] = 'application/pdf'
         return response 
+    
     return render_template('hamil.html', tittle='GIZI IBU HAMIL', 
                            form=form, bb=bb, tb=tb, umur=umur, trimester=trimester, umurhamil=umurhamil, 
-                           imt=imt, bbi=bbi, bmr=bmr, energi=energi, 
+                           imt=imt, bbi=bbi,bbih=bbih,bmr=bmr, energi=energi, 
                            protein=protein, lemak=lemak, karbo=karbo,
                            energi_pagi=energi_pagi, protein_pagi=protein_pagi,
                            lemak_pagi=lemak_pagi, karbo_pagi=karbo_pagi,
                            energi_siang=energi_siang, protein_siang=protein_siang,
                            lemak_siang=lemak_siang, karbo_siang=karbo_siang,
                            energi_malam=energi_malam, protein_malam=protein_malam,
-                           lemak_malam=lemak_malam, karbo_malam=karbo_malam,)
+                           lemak_malam=lemak_malam, karbo_malam=karbo_malam,
+                           
+                           vitamin_a=vitamin_a, vitamin_d=vitamin_d, vitamin_e=vitamin_e,
+                           vitamin_k=vitamin_k, vitamin_b1=vitamin_b1, vitamin_b2=vitamin_b2,
+                           vitamin_b3=vitamin_b3, vitamin_b5=vitamin_b5, vitamin_b6=vitamin_b6,
+                           vitamin_b12=vitamin_b12, folat=folat, biotin=biotin, kolin=kolin, vitamin_c=vitamin_c,
+                           kalsium=kalsium, fosfor=fosfor, magnesium=magnesium, besi=besi, iodium=iodium,
+                           seng=seng, selenium=selenium, mangan=mangan, fluor=fluor, kromium=kromium,
+                           kalium=kalium, natrium=natrium, klor=klor, tembaga=tembaga)
 # AKHIR HALAMAN FORM IBU HAMIL
 
 

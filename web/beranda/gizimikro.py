@@ -1112,5 +1112,113 @@ class gizimikro_hamil():
             
         return mangan
  
-print(gizimikro_hamil(umur=18, trimester='Trimester 2').mangan())
+ 
+ 
+ 
+    def fluor(self):
+        if self.trimester =='Trimester 1':
+            fluor = gizimikro(umur=self.umur, gender='wanita').fluor()
+            fluor = fluor 
+            
+        elif self.trimester =='Trimester 2':
+            fluor = gizimikro(umur=self.umur, gender='wanita').fluor()
+            fluor = fluor 
+
+        elif self.trimester =='Trimester 3':
+            fluor = gizimikro(umur=self.umur, gender='wanita').fluor()
+            fluor = fluor 
+            
+        return fluor
+    
+    
+    
+    
+    def kromium(self):
+        if self.trimester =='Trimester 1':
+            kromium = gizimikro(umur=self.umur, gender='wanita').kromium()
+            kromium = kromium + 5 
+            
+        elif self.trimester =='Trimester 2':
+            kromium = gizimikro(umur=self.umur, gender='wanita').kromium()
+            kromium = kromium + 5
+
+        elif self.trimester =='Trimester 3':
+            kromium = gizimikro(umur=self.umur, gender='wanita').kromium()
+            kromium = kromium + 5
+            
+        return kromium
+    
+    
+    
+    
+    def kalium(self):
+        if self.trimester =='Trimester 1':
+            kalium = gizimikro(umur=self.umur, gender='wanita').kalium()
+            kalium = kalium 
+            
+        elif self.trimester =='Trimester 2':
+            kalium = gizimikro(umur=self.umur, gender='wanita').kalium()
+            kalium = kalium
+
+        elif self.trimester =='Trimester 3':
+            kalium = gizimikro(umur=self.umur, gender='wanita').kalium()
+            kalium = kalium
+            
+        return kalium
+    
+    
+    
+    
+    def natrium(self):
+        if self.trimester =='Trimester 1':
+            natrium = gizimikro(umur=self.umur, gender='wanita').natrium()
+            natrium = natrium 
+            
+        elif self.trimester =='Trimester 2':
+            natrium = gizimikro(umur=self.umur, gender='wanita').natrium()
+            natrium = natrium
+
+        elif self.trimester =='Trimester 3':
+            natrium = gizimikro(umur=self.umur, gender='wanita').natrium()
+            natrium = natrium
+            
+        return natrium
+    
+    
+    
+    
+    def klor(self):
+        if self.trimester =='Trimester 1':
+            klor = gizimikro(umur=self.umur, gender='wanita').klor()
+            klor = klor 
+            
+        elif self.trimester =='Trimester 2':
+            klor = gizimikro(umur=self.umur, gender='wanita').klor()
+            klor = klor
+
+        elif self.trimester =='Trimester 3':
+            klor = gizimikro(umur=self.umur, gender='wanita').klor()
+            klor = klor
+            
+        return klor
+    
+    
+    
+    
+    def tembaga(self):
+        if self.trimester =='Trimester 1':
+            tembaga = gizimikro(umur=self.umur, gender='wanita').tembaga()
+            tembaga = tembaga + 100 
+            
+        elif self.trimester =='Trimester 2':
+            tembaga = gizimikro(umur=self.umur, gender='wanita').tembaga()
+            tembaga = tembaga + 100
+
+        elif self.trimester =='Trimester 3':
+            tembaga = gizimikro(umur=self.umur, gender='wanita').tembaga()
+            tembaga = tembaga + 100
+            
+        return tembaga
+    
+print(gizimikro_hamil(umur=18, trimester='Trimester 2').tembaga())
 
