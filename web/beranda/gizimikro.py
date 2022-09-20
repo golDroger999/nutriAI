@@ -968,6 +968,149 @@ class gizimikro_hamil():
 
         return vitamin_c
     
+    
+    
+    
+    def kalsium(self):
+        if self.trimester =='Trimester 1':
+            kalsium = gizimikro(umur=self.umur, gender='wanita').kalsium()
+            kalsium = kalsium + 200
+            
+        elif self.trimester =='Trimester 2':
+            kalsium = gizimikro(umur=self.umur, gender='wanita').kalsium()
+            kalsium = kalsium + 200
 
-print(gizimikro_hamil(umur=18, trimester='Trimester 1').vitamin_c())
+        elif self.trimester =='Trimester 3':
+            kalsium = gizimikro(umur=self.umur, gender='wanita').kalsium()
+            kalsium = kalsium + 200
+            
+        return kalsium
+
+
+
+
+    def fosfor(self):
+        if self.trimester =='Trimester 1':
+            fosfor = gizimikro(umur=self.umur, gender='wanita').fosfor()
+            fosfor = fosfor 
+            
+        elif self.trimester =='Trimester 2':
+            fosfor = gizimikro(umur=self.umur, gender='wanita').fosfor()
+            fosfor = fosfor 
+
+        elif self.trimester =='Trimester 3':
+            fosfor = gizimikro(umur=self.umur, gender='wanita').fosfor()
+            fosfor = fosfor 
+            
+        return fosfor
+    
+    
+    
+    
+    def magnesium(self):
+        if self.trimester =='Trimester 1':
+            magnesium = gizimikro(umur=self.umur, gender='wanita').magnesium()
+            magnesium = magnesium 
+            
+        elif self.trimester =='Trimester 2':
+            magnesium = gizimikro(umur=self.umur, gender='wanita').magnesium()
+            magnesium = magnesium 
+
+        elif self.trimester =='Trimester 3':
+            magnesium = gizimikro(umur=self.umur, gender='wanita').magnesium()
+            magnesium = magnesium 
+            
+        return magnesium
+    
+    
+    
+    
+    def besi(self):
+        if self.trimester =='Trimester 1':
+            besi =  gizimikro(umur=self.umur, gender='wanita').besi()
+            besi =  besi 
+            
+        elif self.trimester =='Trimester 2':
+            besi =  gizimikro(umur=self.umur, gender='wanita').besi()
+            besi =  besi + 9
+
+        elif self.trimester =='Trimester 3':
+            besi =  gizimikro(umur=self.umur, gender='wanita').besi()
+            besi =  besi + 9
+            
+        return besi
+    
+    
+    
+    
+    def iodium(self):
+        if self.trimester =='Trimester 1':
+            iodium = gizimikro(umur=self.umur, gender='wanita').iodium()
+            iodium = iodium + 70
+            
+        elif self.trimester =='Trimester 2':
+            iodium = gizimikro(umur=self.umur, gender='wanita').iodium()
+            iodium = iodium + 70
+
+        elif self.trimester =='Trimester 3':
+            iodium = gizimikro(umur=self.umur, gender='wanita').iodium()
+            iodium = iodium + 70
+            
+        return iodium
+    
+    
+    
+    
+    def seng(self):
+        if self.trimester =='Trimester 1':
+            seng = gizimikro(umur=self.umur, gender='wanita').seng()
+            seng = seng + 2
+            
+        elif self.trimester =='Trimester 2':
+            seng = gizimikro(umur=self.umur, gender='wanita').seng()
+            seng = seng + 4
+
+        elif self.trimester =='Trimester 3':
+            seng = gizimikro(umur=self.umur, gender='wanita').seng()
+            seng = seng + 4
+            
+        return seng
+    
+    
+    
+    
+    def selenium(self):
+        if self.trimester =='Trimester 1':
+            selenium =  gizimikro(umur=self.umur, gender='wanita').selenium()
+            selenium =  selenium + 5
+            
+        elif self.trimester =='Trimester 2':
+            selenium =  gizimikro(umur=self.umur, gender='wanita').selenium()
+            selenium =  selenium + 5
+
+        elif self.trimester =='Trimester 3':
+            selenium =  gizimikro(umur=self.umur, gender='wanita').selenium()
+            selenium =  selenium + 5
+            
+        return selenium
+    
+    
+    
+    
+    def mangan(self):
+        if self.trimester =='Trimester 1':
+            mangan = gizimikro(umur=self.umur, gender='wanita').mangan()
+            mangan = mangan + 0.2
+            
+        elif self.trimester =='Trimester 2':
+            mangan = gizimikro(umur=self.umur, gender='wanita').mangan()
+            mangan = mangan + 0.2
+
+        elif self.trimester =='Trimester 3':
+            mangan = gizimikro(umur=self.umur, gender='wanita').mangan()
+            mangan = mangan + 0.2
+            
+        return mangan
+ 
+print(gizimikro_hamil(umur=18, trimester='Trimester 2').mangan())
 
