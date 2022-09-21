@@ -1220,5 +1220,95 @@ class gizimikro_hamil():
             
         return tembaga
     
-print(gizimikro_hamil(umur=18, trimester='Trimester 2').tembaga())
+# AKHIR GIZI MIKRO IBU HAMIL
 
+
+
+#GIZI MIKRO IBU MENYUSUI
+
+class gizimikro_menyusui():
+    def __init__(self, umur, siklus):
+        self.umur = umur
+        self.siklus = siklus
+        
+    def vitamin_a(self):
+        vitamin_a = gizimikro(umur=self.umur, gender='wanita').vitamin_a()
+        vitamin_a = vitamin_a + 350
+        return vitamin_a
+    
+    def vitamin_d(self):
+        return gizimikro(umur=self.umur, gender='wanita').vitamin_d()
+    
+    def vitamin_e(self):
+        vitamin_e = gizimikro(umur=self.umur, gender='wanita').vitamin_e()
+        vitamin_e = vitamin_e + 4
+        return vitamin_e
+    
+    def vitamin_k(self):
+        return gizimikro(umur=self.umur, gender='wanita').vitamin_k()
+    
+    def vitamin_b1(self):
+        vitamin_b1 = gizimikro(umur=self.umur, gender='wanita').vitamin_b1()
+        vitamin_b1 = vitamin_b1 + 0.4
+        return vitamin_b1
+    
+    def vitamin_b2(self):
+        vitamin_b2 = gizimikro(umur=self.umur, gender='wanita').vitamin_b2()
+        vitamin_b2 = vitamin_b2 + 0.5
+        return vitamin_b2
+     
+    def vitamin_b3(self):
+        vitamin_b3 = gizimikro(umur=self.umur, gender='wanita').vitamin_b3()
+        vitamin_b3 = vitamin_b3 + 3 
+        return vitamin_b3
+    
+    def vitamin_b5(self):
+        vitamin_b5 = gizimikro(umur=self.umur, gender='wanita').vitamin_b5()
+        vitamin_b5 = vitamin_b5 + 2 
+        return vitamin_b5
+    
+    def vitamin_b6(self):
+        vitamin_b6 = gizimikro(umur=self.umur, gender='wanita').vitamin_b6()
+        vitamin_b6 = vitamin_b6 + 0.6
+        return vitamin_b6
+    
+    def vitamin_b12(self):
+        vitamin_b12 = gizimikro(umur=self.umur, gender='wanita').vitamin_b12()
+        vitamin_b12 = vitamin_b12 + 1.0
+        return vitamin_b12
+    
+    def folat(self):
+        folat = gizimikro(umur=self.umur, gender='wanita').folat()  
+        folat = folat + 100
+        return folat 
+    
+    def biotin(self):
+        biotin = gizimikro(umur=self.umur, gender='wanita').biotin() 
+        biotin =  biotin + 5
+        return biotin
+    
+    def kolin(self):
+        kolin = gizimikro(umur=self.umur, gender='wanita').kolin() 
+        kolin =  kolin + 125
+        return kolin
+    
+    def vitamin_c(self):
+        vitamin_c = gizimikro(umur=self.umur, gender='wanita').vitamin_c()
+        vitamin_c = vitamin_c + 45
+        return vitamin_c
+    
+    def kalsium(self):
+        kalsium = gizimikro(umur=self.umur, gender='wanita').kalsium()
+        kalsium = kalsium + 200
+        return kalsium
+    
+    def fosfor(self):
+        return gizimikro(umur=self.umur, gender='wanita').fosfor()
+    
+    def magnesium(self):
+        return gizimikro(umur=self.umur, gender='wanita').magnesium()
+    
+    def besi(self):
+        return gizimikro(umur=self.umur, gender='wanita').besi()
+    
+print(gizimikro_hamil(umur=18, trimester='Trimester 2').tembaga())
