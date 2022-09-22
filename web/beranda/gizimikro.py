@@ -1311,4 +1311,15 @@ class gizimikro_menyusui():
     def besi(self):
         return gizimikro(umur=self.umur, gender='wanita').besi()
     
+    def iodium(self):
+        iodium = gizimikro(umur=self.umur, gender='wanita').iodium()
+        iodium = iodium + 140
+        return iodium
+    
+    def seng(self):
+        seng = gizimikro(umur=self.umur, gender='wanita').seng()
+        seng = seng + 5
+        return seng
+
+
 print(gizimikro_hamil(umur=18, trimester='Trimester 2').tembaga())
