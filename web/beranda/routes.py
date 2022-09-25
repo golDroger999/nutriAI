@@ -1,7 +1,7 @@
 from flask import (render_template, redirect, request, Blueprint, url_for, make_response)
 from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, FormPerkeni, FormHamil, FormMenyusui)
 import pandas as pd
-from web.beranda.gizimikro import (gizimikro, gizimikro_hamil)
+from web.beranda.gizimikro import (gizimikro, gizimikro_hamil, gizimikro_menyusui)
 import pdfkit
 
 
@@ -919,17 +919,15 @@ def gizihamil_page():
 
 
 # HALAMAN FORM IBU MENYUSUI
-@beranda.route('/gizi-ibu-menyusui', methods=['GET', 'POST'])
+@beranda.route('/gizi-ibu-menyusui', methods=['POST', 'GET'])
 def gizimenyusui_page():
     form = FormMenyusui()
-    bb =''
+    bb = ''
     tb = ''
     umur =''
-    aktivitas = ''
     tidur = ''
-    gender = ''
-    siklus = ''
-    
+    siklus = '' 
+       
     imt = ''
     bbi = ''
     bmr = ''
@@ -953,14 +951,44 @@ def gizimenyusui_page():
     lemak_malam = ''
     karbo_malam = ''
     
-        
-    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form and 'siklus' in request.form  and 'aktivitas' in request.form  and 'tidur' in request.form:
+    vitamin_a   = ''
+    vitamin_d   = ''
+    vitamin_e   = ''
+    vitamin_k   = ''
+    vitamin_b1  = ''
+    vitamin_b2  = ''
+    vitamin_b3  = ''
+    vitamin_b5  = ''
+    vitamin_b6  = ''
+    vitamin_b12 = ''
+    folat =''
+    biotin = ''
+    kolin = ''
+    vitamin_c = ''
+    
+    kalsium =''
+    fosfor =''
+    magnesium =''
+    besi =''
+    iodium = ''
+    seng = ''
+    selenium = ''
+    mangan = ''
+    fluor = ''
+    kromium = ''
+    kalium =''
+    natrium = ''
+    klor =''
+    tembaga=''
+    
+    
+    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'siklus' in request.form   and 'aktivitas' in request.form  and 'tidur' in request.form:
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))
-        siklus = request.form.get('siklus')
-        aktivitas = float(request.form.get('aktivitas'))
         tidur = int(request.form.get('tidur'))
+        aktivitas = float(request.form.get('aktivitas'))
+        siklus = request.form.get('siklus')
         
         
         imt = round ((bb /(tb/100)**2),2)
@@ -1000,6 +1028,36 @@ def gizimenyusui_page():
         lemak_malam = round((0.30 * lemak),2)
         karbo_malam = round((0.30 * karbo),2)
     
+        vitamin_a = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_a()
+        vitamin_d = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_d()
+        vitamin_e = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_e()
+        vitamin_k = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_k()
+        vitamin_b1 = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_b1()
+        vitamin_b2 = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_b2()
+        vitamin_b3 = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_b3()
+        vitamin_b5 = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_b5()
+        vitamin_b6 = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_b6()
+        vitamin_b12 = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_b12()
+        folat = gizimikro_menyusui(umur=umur, siklus=siklus).folat()
+        biotin = gizimikro_menyusui(umur=umur, siklus=siklus).biotin()
+        kolin = gizimikro_menyusui(umur=umur, siklus=siklus).kolin()
+        vitamin_c = gizimikro_menyusui(umur=umur, siklus=siklus).vitamin_c()
+        
+        
+        kalsium = gizimikro_menyusui(umur=umur, siklus=siklus).kalsium()
+        fosfor = gizimikro_menyusui(umur=umur, siklus=siklus).fosfor()
+        magnesium = gizimikro_menyusui(umur=umur, siklus=siklus).magnesium()
+        besi = gizimikro_menyusui(umur=umur, siklus=siklus).besi()
+        iodium = gizimikro_menyusui(umur=umur, siklus=siklus).iodium()
+        seng = gizimikro_menyusui(umur=umur, siklus=siklus).seng()
+        selenium = gizimikro_menyusui(umur=umur, siklus=siklus).selenium()
+        mangan = gizimikro_menyusui(umur=umur, siklus=siklus).mangan()
+        fluor = gizimikro_menyusui(umur=umur, siklus=siklus).fluor()
+        kromium = gizimikro_menyusui(umur=umur, siklus=siklus).kromium()
+        kalium = gizimikro_menyusui(umur=umur, siklus=siklus).kalium()
+        natrium = gizimikro_menyusui(umur=umur, siklus=siklus).natrium()
+        klor = gizimikro_menyusui(umur=umur, siklus=siklus).klor()
+        tembaga = gizimikro_menyusui(umur=umur, siklus=siklus).tembaga()
        
     if request.form.get('laporan'):
         nama = request.form.get('nama')
@@ -1019,15 +1077,23 @@ def gizimenyusui_page():
         return response 
     
     return render_template('menyusui.html', tittle='GIZI IBU MENYUSUI',
-                           form=form, bb=bb, tb=tb, umur=umur, 
-                           imt=imt, bbi=bbi, siklus=siklus, bmr=bmr, energi=energi, 
+                         form=form,  bb=bb, tb=tb, umur=umur, siklus=siklus, 
+                           imt=imt, bbi=bbi, bmr=bmr, energi=energi, 
                            protein=protein, lemak=lemak, karbo=karbo,
                            energi_pagi=energi_pagi, protein_pagi=protein_pagi,
                            lemak_pagi=lemak_pagi, karbo_pagi=karbo_pagi,
                            energi_siang=energi_siang, protein_siang=protein_siang,
                            lemak_siang=lemak_siang, karbo_siang=karbo_siang,
                            energi_malam=energi_malam, protein_malam=protein_malam,
-                           lemak_malam=lemak_malam, karbo_malam=karbo_malam)
+                           lemak_malam=lemak_malam, karbo_malam=karbo_malam,
+                           
+                           vitamin_a=vitamin_a, vitamin_d=vitamin_d, vitamin_e=vitamin_e,
+                           vitamin_k=vitamin_k, vitamin_b1=vitamin_b1, vitamin_b2=vitamin_b2,
+                           vitamin_b3=vitamin_b3, vitamin_b5=vitamin_b5, vitamin_b6=vitamin_b6,
+                           vitamin_b12=vitamin_b12, folat=folat, biotin=biotin, kolin=kolin, vitamin_c=vitamin_c,
+                           kalsium=kalsium, fosfor=fosfor, magnesium=magnesium, besi=besi, iodium=iodium,
+                           seng=seng, selenium=selenium, mangan=mangan, fluor=fluor, kromium=kromium,
+                           kalium=kalium, natrium=natrium, klor=klor, tembaga=tembaga)
 # AKHIR HALAMAN FORM IBU MENYUSUI
 
 

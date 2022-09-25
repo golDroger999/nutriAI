@@ -79,8 +79,8 @@ class FormHamil(FlaskForm):
     
 # FORM IBU MENYUSUI 
 class FormMenyusui(FlaskForm):
-    nama = StringField('Nama (dalam tahun)', validators=[DataRequired(message='data harus diisi')])
-    umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
+    nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur (dalam tahun)', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
@@ -99,7 +99,6 @@ class FormGinjal(FlaskForm):
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
     stress = IntegerField('Faktor Stress', validators=[DataRequired(message='data harus diisi')])
-    siklus = SelectField('siklus', choices=['6 BULAN PERTAMA', '6 BULAN KEDUA'])
     gender = SelectField('Gender', choices=['pria', 'wanita'])
     hitung = SubmitField('Hitung')
     laporan = SubmitField('Print pdf')

@@ -1320,6 +1320,43 @@ class gizimikro_menyusui():
         seng = gizimikro(umur=self.umur, gender='wanita').seng()
         seng = seng + 5
         return seng
+    
+    def selenium(self):
+        selenium = gizimikro(umur=self.umur, gender="wanita").selenium()
+        selenium = selenium + 10
+        return selenium 
+    
+    def mangan(self):
+        mangan = gizimikro(umur=self.umur, gender= 'wanita').mangan()
+        mangan = mangan + 0.8
+        return mangan 
+    
+    def fluor(self):
+        return gizimikro(umur=self.umur, gender='wanita').fluor()
+    
+    def kromium(self):
+        kromium = gizimikro(umur=self.umur, gender='wanita').kromium()
+        kromium = kromium + 20 
+        return kromium
+    
+    def kalium(self):
+        kalium = gizimikro(umur=self.umur, gender='wanita').kalium()
+        kalium = kalium + 400
+        return kalium
+    
+    def natrium(self):
+        return gizimikro(umur=self.umur, gender='wanita').natrium()
+    
+    def klor(self):
+        return gizimikro(umur=self.umur, gender='wanita').klor()
+    
+    def tembaga(self):
+        tembaga = gizimikro(umur=self.umur, gender='wanita').tembaga()
+        tembaga = tembaga + 400
+        return tembaga
+    
+# AKHIR GIZI MIKRO IBU MENYUSUI
+        
 
 
-print(gizimikro_hamil(umur=18, trimester='Trimester 2').tembaga())
+# print(gizimikro_hamil(umur=18, trimester='Trimester 2').tembaga())
