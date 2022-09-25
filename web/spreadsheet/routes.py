@@ -14,8 +14,7 @@ sheet = Blueprint('sheet', __name__)
 # HALAMAN DASHBOARD CSV
 @sheet.route('/gizi-kelompok', methods=['GET', 'POST'])
 def csv_page():
-    
-    data = ''
-    return render_template('spreadsheet.html',data = data)
+    form = csv_form()
+    return render_template('spreadsheet.html',form=form)
 #  AKHIR HALAMAN DASHBOARD CSV
 
