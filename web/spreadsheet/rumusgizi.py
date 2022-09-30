@@ -36,8 +36,8 @@ class HitungGiziKelompok():
     
     def energi(self, tidur=8, aktivitas=0.50):
         bbi = 0.9 * (self.tb-100)
-        bmr_pria    = 1 * 24 * bbi
-        bmr_wanita  = 0.90 * 24 * bbi
+        bmr_pria    = 1 * 24 * self.bb
+        bmr_wanita  = 0.90 * 24 * self.bb
         
         bmr_coice   = [
             (self.gender == 'pria'),
@@ -47,7 +47,7 @@ class HitungGiziKelompok():
         bmr = [bmr_pria, bmr_wanita]
         bmr = np.select(bmr_coice, bmr)
         
-        koreksi_tidur   = 0.1 * tidur * bbi
+        koreksi_tidur   = 0.1 * tidur * self.bb
         c_kalori        = bmr - koreksi_tidur
         aktivitas       = aktivitas * c_kalori
         e_kalori        = c_kalori + aktivitas
@@ -60,8 +60,8 @@ class HitungGiziKelompok():
     
     def protein(self, tidur=8, aktivitas=0.50):
         bbi = 0.9 * (self.tb-100)
-        bmr_pria    = 1 * 24 * bbi
-        bmr_wanita  = 0.90 * 24 * bbi
+        bmr_pria    = 1 * 24 * self.bb
+        bmr_wanita  = 0.90 * 24 * self.bb
         
         bmr_coice   = [
             (self.gender == 'pria'),
@@ -71,7 +71,7 @@ class HitungGiziKelompok():
         bmr = [bmr_pria, bmr_wanita]
         bmr = np.select(bmr_coice, bmr)
         
-        koreksi_tidur   = 0.1 * tidur * bbi
+        koreksi_tidur   = 0.1 * tidur * self.bb
         c_kalori        = bmr - koreksi_tidur
         aktivitas       = aktivitas * c_kalori
         e_kalori        = c_kalori + aktivitas
@@ -85,8 +85,8 @@ class HitungGiziKelompok():
     
     def lemak(self, tidur=8, aktivitas=0.50):
         bbi = 0.9 * (self.tb-100)
-        bmr_pria    = 1 * 24 * bbi
-        bmr_wanita  = 0.90 * 24 * bbi
+        bmr_pria    = 1 * 24 * self.bb
+        bmr_wanita  = 0.90 * 24 * self.bb
         
         bmr_coice   = [
             (self.gender == 'pria'),
@@ -96,7 +96,7 @@ class HitungGiziKelompok():
         bmr = [bmr_pria, bmr_wanita]
         bmr = np.select(bmr_coice, bmr)
         
-        koreksi_tidur   = 0.1 * tidur * bbi
+        koreksi_tidur   = 0.1 * tidur * self.bb
         c_kalori        = bmr - koreksi_tidur
         aktivitas       = aktivitas * c_kalori
         e_kalori        = c_kalori + aktivitas
@@ -110,8 +110,8 @@ class HitungGiziKelompok():
     
     def karbo(self, tidur=8, aktivitas=0.50):
         bbi = 0.9 * (self.tb-100)
-        bmr_pria    = 1 * 24 * bbi
-        bmr_wanita  = 0.90 * 24 * bbi
+        bmr_pria    = 1 * 24 * self.bb
+        bmr_wanita  = 0.90 * 24 * self.bb
         
         bmr_coice   = [
             (self.gender == 'pria'),
@@ -121,7 +121,7 @@ class HitungGiziKelompok():
         bmr = [bmr_pria, bmr_wanita]
         bmr = np.select(bmr_coice, bmr)
         
-        koreksi_tidur   = 0.1 * tidur * bbi
+        koreksi_tidur   = 0.1 * tidur * self.bb
         c_kalori        = bmr - koreksi_tidur
         aktivitas       = aktivitas * c_kalori
         e_kalori        = c_kalori + aktivitas

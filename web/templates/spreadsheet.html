@@ -55,17 +55,268 @@
     </div>
 
     {% if request.form.get('analisa') %}
-    <div class="">
-        <div class="upload-csv pt-1 mt-1 mb-5 pb-5">
-            <div class="card shadow-sm mb-3 mx-3">
-                <div class="card-body">
-                    <h5 class="card-title">HASIL</h5>
-                    <div>
-                        {{data}}
+
+
+    <div class="product-title d-flex justify-content-center pt-1 mt-4 mb-1">
+        <h3 class="display-6">
+            KALSIFIKASI STATUS GIZI
+        </h3>
+    </div>
+
+    <div class="upload-csv pt-1 mt-1 mb-1 pb-1">
+        <div class="card shadow-sm mb-1 mx-3">
+            <div class="card-body">
+                <h5 class="card-title">JUMLAH TOTAL STATUS GIZI BERDASARKAN IMT</h5>
+                <div>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            JUMLAH TOTAL KURUS
+                            <span class="badge bg-info text-dark  fs-6">{{kurus['bb'].count()}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            JUMLAH TOTAL IDEAL
+                            <span class="badge bg-info text-dark  fs-6">{{ideal['bb'].count()}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            JUMLAH TOTAL GEMUK
+                            <span class="badge bg-info text-dark  fs-6">{{gemuk['bb'].count()}}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            JUMLAH TOTAL OBESITAS
+                            <span class="badge bg-info text-dark  fs-6">{{obesitas['bb'].count()}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="product-title d-flex justify-content-center mt-4 mb-1">
+        <h3 class="display-6">
+            KEBUTUHAN GIZI TOTAL
+        </h3>
+    </div>
+
+    <div class="row csv-kebutuhan-gizi">
+        <div class="col">
+            <div class="upload-csv  mb-1 pb-1">
+                <div class="card shadow-sm mb-3 mx-3">
+                    <div class="card-body">
+                        <div class="card-header mb-2">JUMLAH TOTAL KEBUTUHAN GIZI</div>
+                        <div class="mt-3 mb-3">
+                            <h6>KELOMPOK KURUS</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ENERGI
+                                    <span class="badge bg-info text-dark  fs-6">{{kurus['energi'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    PROTEIN
+                                    <span class="badge bg-info text-dark  fs-6">{{kurus['protein'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    LEMAK
+                                    <span class="badge bg-info text-dark  fs-6">{{kurus['lemak'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    KARBO
+                                    <span class="badge bg-info text-dark  fs-6">{{kurus['karbo'].sum()}}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6>KELOMPOK IDEAL</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ENERGI
+                                    <span class="badge bg-info text-dark  fs-6">{{ideal['energi'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    PROTEIN
+                                    <span class="badge bg-info text-dark  fs-6">{{ideal['protein'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    LEMAK
+                                    <span class="badge bg-info text-dark  fs-6">{{ideal['lemak'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    KARBO
+                                    <span class="badge bg-info text-dark  fs-6">{{ideal['karbo'].sum()}}</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="col">
+            <div class="upload-csv  mb-1 pb-1">
+                <div class="card shadow-sm mb-3 mx-3">
+                    <div class="card-body">
+                        <div class="card-header mb-2">JUMLAH TOTAL KEBUTUHAN GIZI</div>
+                        <div class="mt-3 mb-3">
+                            <h6>KELOMPOK GEMUK</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ENERGI
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['energi'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    PROTEIN
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['protein'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    LEMAK
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['lemak'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    KARBO
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['karbo'].sum()}}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6>KELOMPOK OBESITAS</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ENERGI
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['energi'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    PROTEIN
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['protein'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    LEMAK
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['lemak'].sum()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    KARBO
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['karbo'].sum()}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-title d-flex justify-content-center mt-4 mb-1">
+            <h3 class="display-6">
+                KEBUTUHAN GIZI RATA-RATA
+            </h3>
+        </div>
+        <div class="col">
+            <div class="upload-csv  mb-1 pb-1">
+                <div class="card shadow-sm mb-3 mx-3">
+                    <div class="card-body">
+                        <div class="card-header mb-2">JUMLAH RATA-RATA KEBUTUHAN GIZI</div>
+                        <div class="mt-3 mb-3">
+                            <h6>KELOMPOK KURUS</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ENERGI
+                                    <span class="badge bg-info text-dark  fs-6">{{kurus['energi'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    PROTEIN
+                                    <span class="badge bg-info text-dark  fs-6">{{kurus['protein'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    LEMAK
+                                    <span class="badge bg-info text-dark  fs-6">{{kurus['lemak'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    KARBO
+                                    <span class="badge bg-info text-dark  fs-6">{{kurus['karbo'].mean()}}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6>KELOMPOK IDEAL</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ENERGI
+                                    <span class="badge bg-info text-dark  fs-6">{{ideal['energi'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    PROTEIN
+                                    <span class="badge bg-info text-dark  fs-6">{{ideal['protein'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    LEMAK
+                                    <span class="badge bg-info text-dark  fs-6">{{ideal['lemak'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    KARBO
+                                    <span class="badge bg-info text-dark  fs-6">{{ideal['karbo'].mean()}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="upload-csv  mb-1 pb-1">
+                <div class="card shadow-sm mb-3 mx-3">
+                    <div class="card-body">
+                        <div class="card-header mb-2">JUMLAH RATA-RATA KEBUTUHAN GIZI</div>
+                        <div class="mt-3 mb-3">
+                            <h6>KELOMPOK GEMUK</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ENERGI
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['energi'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    PROTEIN
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['protein'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    LEMAK
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['lemak'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    KARBO
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['karbo'].mean()}}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6>KELOMPOK OBESITAS</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    ENERGI
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['energi'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    PROTEIN
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['protein'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    LEMAK
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['lemak'].mean()}}</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    KARBO
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['karbo'].mean()}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     {% endif %}
 </div>

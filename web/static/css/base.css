@@ -75,6 +75,10 @@ nav{
 
 /* AKHIR DUBOIS */
 
+/* GIZI KELOMPOK */
+
+/* AKHIR GIZI KELOMPOK */
+
 
 
 /* ------------------------------MOBILE MEDIA-------------------------------- */
@@ -118,6 +122,14 @@ nav{
         height: min-content;
     }
 /* AKHIR DUBOIS */
+
+
+
+/*gizi kelompok */
+    /* .csv-kebutuhan-gizi{
+        display: flex;
+        flex-direction: column;
+    } */
     
 
 }
