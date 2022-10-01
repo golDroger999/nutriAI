@@ -37,7 +37,7 @@ def csv_page():
             ideal = data.loc[data['status']=='ideal']
             gemuk = data.loc[data['status']=='gemuk']
             obesitas = data.loc[data['status']=='obesitas']
-           
+            
             print(data)
         
         except:
