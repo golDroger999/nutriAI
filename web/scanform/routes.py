@@ -8,4 +8,4 @@ scanner = Blueprint('scanner', __name__)
 @scanner.route('/scan-form', methods=['GET', 'POST'])
 def scanner_page():
     form = document()
-    return render_template('scanner.html', form=form) 
+    return render_template('scanner_form.html', tittle='SCANNER FORMULIR', form=form) 

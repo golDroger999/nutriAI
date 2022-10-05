@@ -26,7 +26,7 @@ def csv_page():
             data = pd.read_csv(request.files.get('csv'))
             data = pd.DataFrame(data)
             data['imt'] = (hgk(bb=data['bb'], tb=data['tb'], umur=data['umur'], gender=data['gender']).imt())
-            data['status'] = (hgk(bb=data['bb'], tb=data['tb'], umur=data['umur'], gender=data['gender']).statusgizi())
+            data['status'] =  (hgk(bb=data['bb'], tb=data['tb'], umur=data['umur'], gender=data['gender']).statusgizi())
             data['energi'] = (hgk(bb=data['bb'], tb=data['tb'], umur=data['umur'], gender=data['gender']).energi())
             data['protein'] = (hgk(bb=data['bb'], tb=data['tb'], umur=data['umur'], gender=data['gender']).protein())
             data['lemak'] = (hgk(bb=data['bb'], tb=data['tb'], umur=data['umur'], gender=data['gender']).lemak())
@@ -43,7 +43,7 @@ def csv_page():
         except:
             return redirect(url_for("sheet.csv_page"))
 
-    return render_template('spreadsheet.html',title='GIZI KELOMPOK',form=form, data=data, 
+    return render_template('spreadsheet.html',tittle='GIZI KELOMPOK',form=form, data=data, 
                            kurus=kurus, ideal=ideal, gemuk=gemuk, obesitas=obesitas)
                            
 #  AKHIR HALAMAN DASHBOARD CSV
