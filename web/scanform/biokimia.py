@@ -5,34 +5,34 @@ class biokimia():
         self.gender = gender 
         # self.jumlah = jumlah
     
-    def albumin(self, albumin):
+    def albumin(self, albumin=0):
         pass
     
-    def sgpt(self, sgpt):
+    def sgpt(self, sgpt=0):
         pass 
     
-    def sgot(self, sgot):
+    def sgot(self, sgot=0):
         pass
     
-    def bun(self, bun):
+    def bun(self, bun=0):
         pass
     
-    def hdl(self, hdl):
+    def hdl(self, hdl=0):
         pass
     
-    def ldl(self, ldl):
+    def ldl(self, ldl=0):
         pass
     
-    def trigliserida(self, trigliserida):
+    def trigliserida(self, trigliserida=0):
         pass
     
-    def kolesterol_total(self, kolesterol_total):
+    def kolesterol_total(self, kolesterol_total=0):
         pass
     
-    def bilirubin_direk(self, bilirubin_direk):
+    def bilirubin_direk(self, bilirubin_direk=0):
         pass
     
-    def bilirubin_total(self, bilirubin_total):
+    def bilirubin_total(self, bilirubin_total=0):
         pass 
     
     

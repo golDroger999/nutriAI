@@ -6,7 +6,9 @@ app.config['SECRET_KEY']='denutridash'
 from web.beranda.routes import beranda
 from web.scanform.routes import scanner
 from web.spreadsheet.routes import sheet
+from web.pagt.routes import pagt
 
 app.register_blueprint(beranda)
 app.register_blueprint(scanner)
 app.register_blueprint(sheet)
+app.register_blueprint(pagt)
