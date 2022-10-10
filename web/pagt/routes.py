@@ -4,6 +4,15 @@ from web.pagt.form import pagtform
 
 pagt = Blueprint('pagt', __name__)
 
+
+@pagt.route('/masuk')
+def masuk():
+    pass
+
+@pagt.route('/daftar')
+def daftar():
+    pass
+
 @pagt.route('/pagt-form')
 def pagt_page():
     form = pagtform()

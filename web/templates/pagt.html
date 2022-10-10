@@ -12,6 +12,9 @@
         </h3>
       </div>
 
+      <p class="container d-flex justify-content-center  mb-2 ">
+        [*CATATAN PENGGUNAAN FORM* perhitungan defaultnya menggunkan rumus harris bennedict, tapi untuk penderita dm menggunakan perkeni 2015, penyakit ginjal dengan rumus GGK/CKD/CRF]</p>
+
 
       <div class="pagt-item shadow-lg">
         <form method="post">
@@ -114,6 +117,12 @@
                     
                     {{form.asam_urat.label(class='form-control-label mb-1')}}
                     {{form.asam_urat(class='form-control mb-3')}}
+                    
+                    {{form.ht.label(class='form-control-label mb-1')}}
+                    {{form.ht(class='form-control mb-3')}}
+
+                    {{form.ureum.label(class='form-control-label mb-1')}}
+                    {{form.ureum(class='form-control mb-3')}}
 
                   </div>
 
@@ -126,6 +135,16 @@
 
                     {{form.bilirubin_total.label(class='form-control-label mb-1')}}
                     {{form.bilirubin_total(class='form-control mb-3')}}
+
+                    {{form.kalium.label(class='form-control-label mb-1')}}
+                    {{form.kalium(class='form-control mb-3')}}
+
+                    {{form.klorida.label(class='form-control-label mb-1')}}
+                    {{form.klorida(class='form-control mb-3')}}
+
+                    {{form.ver_mvc.label(class='form-control-label mb-1')}}
+                    {{form.ver_mvc(class='form-control mb-3')}}
+
                   </div>
                 </div>
               </div>
@@ -147,33 +166,30 @@
               <div class="accordion-body">
                 <div class="row mx-1">
                   <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.nama.label(class='form-control-label mb-1')}}
-                    {{form.nama(class='form-control mb-3')}}
+                    {{form.tekanan_darah.label(class='form-control-label mb-1')}}
+                    {{form.tekanan_darah(class='form-control mb-3')}}
 
-                    {{form.umur.label(class='form-control-label mb-1')}}
-                    {{form.umur(class='form-control mb-3')}}
+                    {{form.suhu.label(class='form-control-label mb-1')}}
+                    {{form.suhu(class='form-control mb-3')}}
                   </div>
 
                   <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.bb.label(class='form-control-label mb-1')}}
-                    {{form.bb(class='form-control mb-3')}}
+                    {{form.respirasi.label(class='form-control-label mb-1')}}
+                    {{form.respirasi(class='form-control mb-3')}}
 
-                    {{form.tb.label(class='form-control-label mb-1')}}
-                    {{form.tb(class='form-control mb-3')}}
+                    {{form.nadi.label(class='form-control-label mb-1')}}
+                    {{form.nadi(class='form-control mb-3')}}
 
-                    {{form.penyakit.label(class='form-control-label mb-1')}}
-                    {{form.penyakit(class='form-control mb-3')}}
+                    {{form.luka_bakar.label(class='form-control-label mb-1')}}
+                    {{form.luka_bakar(class='form-control mb-3')}}
                   </div>
 
                   <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.aktivitas.label(class='form-control-label mb-1')}}
-                    {{form.aktivitas(class='form-control mb-3')}}
+                    {{form.masalah_oral.label(class='form-control-label mb-1')}}
+                    {{form.masalah_oral(class='form-control mb-3')}}
 
-                    {{form.stress.label(class='form-control-label mb-1')}}
-                    {{form.stress(class='form-control mb-3')}}
-
-                    {{form.gender.label(class='form-control-label mb-1')}}
-                    {{form.gender(class='form-control mb-3')}}
+                    {{form.kelainan_fisik.label(class='form-control-label mb-1')}}
+                    {{form.kelainan_fisik(class='form-control mb-3')}}
                   </div>
                 </div>
             </div>
