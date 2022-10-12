@@ -1,301 +1,309 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-  <div class="pagt-form pt-5 mt-5">
-    <div class="accordion" id="accordionExample">
+<div class="container-fluid">
+  <div class="container-fluid">
+    <div class="pagt-form pt-5 mt-5">
+      <div class="accordion" id="accordionExample">
 
 
-      <div class="product-title d-flex justify-content-center mt-4 mb-1">
-        <h3 class="display-6">
-          PAGT FORM
-        </h3>
-      </div>
+        <div class="product-title d-flex justify-content-center mt-4 mb-1">
+          <h3 class="display-6">
+            FORMULIR ASUHAN GIZI KLINIK
+          </h3>
+        </div>
 
-      <p class="container d-flex justify-content-center  mb-2 ">
-        [*CATATAN PENGGUNAAN FORM* perhitungan defaultnya menggunkan rumus harris bennedict, tapi untuk penderita dm menggunakan perkeni 2015, penyakit ginjal dengan rumus GGK/CKD/CRF]</p>
-
-
-      <div class="pagt-item shadow-lg">
-        <form method="post">
+        <p class="container d-flex justify-content-center  mb-2 ">
+          [*SEMUA ANALISA GIZI BERSUMBER DARI BUKU PENUNTUN DIET EDISI 4 TERBITAN EGC, DAN BUKU ASUHAN GIZI KLINIK
+          TERBITAN EGC*]</p>
 
 
-
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                DATA DIRI DAN ANTROPOMETRI
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="row mx-1">
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.nama.label(class='form-control-label mb-1')}}
-                    {{form.nama(class='form-control mb-3')}}
-
-                    {{form.umur.label(class='form-control-label mb-1')}}
-                    {{form.umur(class='form-control mb-3')}}
-
-                    {{form.pekerjaan.label(class='form-control-label mb-1')}}
-                    {{form.pekerjaan(class='form-control mb-3')}}
-                  </div>
-
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.bb.label(class='form-control-label mb-1')}}
-                    {{form.bb(class='form-control mb-3')}}
-
-                    {{form.tb.label(class='form-control-label mb-1')}}
-                    {{form.tb(class='form-control mb-3')}}
-
-                    {{form.penyakit.label(class='form-control-label mb-1')}}
-                    {{form.penyakit(class='form-control mb-3')}}
-                  </div>
-
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.aktivitas.label(class='form-control-label mb-1')}}
-                    {{form.aktivitas(class='form-control mb-3')}}
-
-                    {{form.stress.label(class='form-control-label mb-1')}}
-                    {{form.stress(class='form-control mb-3')}}
-
-                    {{form.gender.label(class='form-control-label mb-1')}}
-                    {{form.gender(class='form-control mb-3')}}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="pagt-item shadow-lg">
+          <form method="post">
 
 
 
 
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                DATA BIOKIMIA
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="row mx-1">
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.hb.label(class='form-control-label mb-1')}}
-                    {{form.hb(class='form-control mb-3')}}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  DATA DIRI DAN ANTROPOMETRI
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row mx-1">
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.nama.label(class='form-control-label mb-1')}}
+                      {{form.nama(class='form-control mb-3')}}
 
-                    {{form.ldl.label(class='form-control-label mb-1')}}
-                    {{form.ldl(class='form-control mb-3')}}
+                      {{form.umur.label(class='form-control-label mb-1')}}
+                      {{form.umur(class='form-control mb-3')}}
 
-                    {{form.hdl.label(class='form-control-label mb-1')}}
-                    {{form.hdl(class='form-control mb-3')}}
+                      {{form.pekerjaan.label(class='form-control-label mb-1')}}
+                      {{form.pekerjaan(class='form-control mb-3')}}
+                    </div>
 
-                    {{form.trigliserida.label(class='form-control-label mb-1')}}
-                    {{form.trigliserida(class='form-control mb-3')}}
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.bb.label(class='form-control-label mb-1')}}
+                      {{form.bb(class='form-control mb-3')}}
 
-                    {{form.gula_puasa.label(class='form-control-label mb-1')}}
-                    {{form.gula_puasa(class='form-control mb-3')}}
+                      {{form.tb.label(class='form-control-label mb-1')}}
+                      {{form.tb(class='form-control mb-3')}}
 
-                    {{form.gula_sewaktu.label(class='form-control-label mb-1')}}
-                    {{form.gula_sewaktu(class='form-control mb-3')}}
+                      {{form.penyakit.label(class='form-control-label mb-1')}}
+                      {{form.penyakit(class='form-control mb-3')}}
+                    </div>
+
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.aktivitas.label(class='form-control-label mb-1')}}
+                      {{form.aktivitas(class='form-control mb-3')}}
+
+                      {{form.stress.label(class='form-control-label mb-1')}}
+                      {{form.stress(class='form-control mb-3')}}
+
+                      {{form.gender.label(class='form-control-label mb-1')}}
+                      {{form.gender(class='form-control mb-3')}}
+                    </div>
 
                   </div>
-
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.kolesterol.label(class='form-control-label mb-1')}}
-                    {{form.kolesterol(class='form-control mb-3')}}
-
-                    {{form.sgpt.label(class='form-control-label mb-1')}}
-                    {{form.sgpt(class='form-control mb-3')}}
-
-                    {{form.sgot.label(class='form-control-label mb-1')}}
-                    {{form.sgot(class='form-control mb-3')}}
-                    
-                    {{form.asam_urat.label(class='form-control-label mb-1')}}
-                    {{form.asam_urat(class='form-control mb-3')}}
-                    
-                    {{form.ht.label(class='form-control-label mb-1')}}
-                    {{form.ht(class='form-control mb-3')}}
-
-                    {{form.ureum.label(class='form-control-label mb-1')}}
-                    {{form.ureum(class='form-control mb-3')}}
-
-                  </div>
-
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.bun.label(class='form-control-label mb-1')}}
-                    {{form.bun(class='form-control mb-3')}}
-
-                    {{form.bilirubin_direk.label(class='form-control-label mb-1')}}
-                    {{form.bilirubin_direk(class='form-control mb-3')}}
-
-                    {{form.bilirubin_total.label(class='form-control-label mb-1')}}
-                    {{form.bilirubin_total(class='form-control mb-3')}}
-
-                    {{form.kalium.label(class='form-control-label mb-1')}}
-                    {{form.kalium(class='form-control mb-3')}}
-
-                    {{form.klorida.label(class='form-control-label mb-1')}}
-                    {{form.klorida(class='form-control mb-3')}}
-
-                    {{form.ver_mvc.label(class='form-control-label mb-1')}}
-                    {{form.ver_mvc(class='form-control mb-3')}}
-
+                  <div class="card px-1 mx-2 mb-3 shadow-sm">
+                    {{form.catatan_personal.label(class='form-control-label mb-1')}}
+                    {{form.catatan_personal(class='form-control mb-3')}}
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
 
 
 
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                DATA FISIK KLINIS
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="row mx-1">
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.tekanan_darah.label(class='form-control-label mb-1')}}
-                    {{form.tekanan_darah(class='form-control mb-3')}}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  DATA BIOKIMIA
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row mx-1">
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.hb.label(class='form-control-label mb-1')}}
+                      {{form.hb(class='form-control mb-3')}}
 
-                    {{form.suhu.label(class='form-control-label mb-1')}}
-                    {{form.suhu(class='form-control mb-3')}}
-                  </div>
+                      {{form.ldl.label(class='form-control-label mb-1')}}
+                      {{form.ldl(class='form-control mb-3')}}
 
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.respirasi.label(class='form-control-label mb-1')}}
-                    {{form.respirasi(class='form-control mb-3')}}
+                      {{form.hdl.label(class='form-control-label mb-1')}}
+                      {{form.hdl(class='form-control mb-3')}}
 
-                    {{form.nadi.label(class='form-control-label mb-1')}}
-                    {{form.nadi(class='form-control mb-3')}}
+                      {{form.trigliserida.label(class='form-control-label mb-1')}}
+                      {{form.trigliserida(class='form-control mb-3')}}
 
-                    {{form.luka_bakar.label(class='form-control-label mb-1')}}
-                    {{form.luka_bakar(class='form-control mb-3')}}
-                  </div>
+                      {{form.gula_puasa.label(class='form-control-label mb-1')}}
+                      {{form.gula_puasa(class='form-control mb-3')}}
 
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.masalah_oral.label(class='form-control-label mb-1')}}
-                    {{form.masalah_oral(class='form-control mb-3')}}
+                      {{form.gula_sewaktu.label(class='form-control-label mb-1')}}
+                      {{form.gula_sewaktu(class='form-control mb-3')}}
 
-                    {{form.kelainan_fisik.label(class='form-control-label mb-1')}}
-                    {{form.kelainan_fisik(class='form-control mb-3')}}
-                  </div>
-                </div>
-            </div>
-          </div>
+                    </div>
 
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.kolesterol.label(class='form-control-label mb-1')}}
+                      {{form.kolesterol(class='form-control mb-3')}}
 
+                      {{form.sgpt.label(class='form-control-label mb-1')}}
+                      {{form.sgpt(class='form-control mb-3')}}
 
+                      {{form.sgot.label(class='form-control-label mb-1')}}
+                      {{form.sgot(class='form-control mb-3')}}
 
+                      {{form.asam_urat.label(class='form-control-label mb-1')}}
+                      {{form.asam_urat(class='form-control mb-3')}}
 
-          <!-- <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFour">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                DATA RIWAYAT PERSONAL
-              </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="row mx-1">
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.nama.label(class='form-control-label mb-1')}}
-                    {{form.nama(class='form-control mb-3')}}
+                      {{form.ht.label(class='form-control-label mb-1')}}
+                      {{form.ht(class='form-control mb-3')}}
 
-                    {{form.umur.label(class='form-control-label mb-1')}}
-                    {{form.umur(class='form-control mb-3')}}
-                  </div>
+                      {{form.ureum.label(class='form-control-label mb-1')}}
+                      {{form.ureum(class='form-control mb-3')}}
 
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.bb.label(class='form-control-label mb-1')}}
-                    {{form.bb(class='form-control mb-3')}}
+                    </div>
 
-                    {{form.tb.label(class='form-control-label mb-1')}}
-                    {{form.tb(class='form-control mb-3')}}
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.bun.label(class='form-control-label mb-1')}}
+                      {{form.bun(class='form-control mb-3')}}
 
-                    {{form.penyakit.label(class='form-control-label mb-1')}}
-                    {{form.penyakit(class='form-control mb-3')}}
-                  </div>
+                      {{form.bilirubin_direk.label(class='form-control-label mb-1')}}
+                      {{form.bilirubin_direk(class='form-control mb-3')}}
 
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.aktivitas.label(class='form-control-label mb-1')}}
-                    {{form.aktivitas(class='form-control mb-3')}}
+                      {{form.bilirubin_total.label(class='form-control-label mb-1')}}
+                      {{form.bilirubin_total(class='form-control mb-3')}}
 
-                    {{form.stress.label(class='form-control-label mb-1')}}
-                    {{form.stress(class='form-control mb-3')}}
+                      {{form.kalium.label(class='form-control-label mb-1')}}
+                      {{form.kalium(class='form-control mb-3')}}
 
-                    {{form.gender.label(class='form-control-label mb-1')}}
-                    {{form.gender(class='form-control mb-3')}}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
+                      {{form.klorida.label(class='form-control-label mb-1')}}
+                      {{form.klorida(class='form-control mb-3')}}
 
+                      {{form.ver_mvc.label(class='form-control-label mb-1')}}
+                      {{form.ver_mvc(class='form-control mb-3')}}
 
+                    </div>
 
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.albumin.label(class='form-control-label mb-1')}}
+                      {{form.albumin(class='form-control mb-3')}}
 
+                      {{form.kreatinin.label(class='form-control-label mb-1')}}
+                      {{form.kreatinin(class='form-control mb-3')}}
 
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFive">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                DATA RIWAYAT MAKAN/ASUPAN
-              </button>
-            </h2>
-            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <div class="row mx-1">
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.energi.label(class='form-control-label mb-1')}}
-                    {{form.energi(class='form-control mb-3')}}
-                  </div>
+                      {{form.hematokrit.label(class='form-control-label mb-1')}}
+                      {{form.hematokrit(class='form-control mb-3')}}
 
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.protein.label(class='form-control-label mb-1')}}
-                    {{form.protein(class='form-control mb-3')}}
+                      {{form.limfosit.label(class='form-control-label mb-1')}}
+                      {{form.limfosit(class='form-control mb-3')}}
 
-                  </div>
+                      {{form.trombosit.label(class='form-control-label mb-1')}}
+                      {{form.trombosit(class='form-control mb-3')}}
 
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.lemak.label(class='form-control-label mb-1')}}
-                    {{form.lemak(class='form-control mb-3')}}
-                  </div>
+                      {{form.leukosit.label(class='form-control-label mb-1')}}
+                      {{form.leukosit(class='form-control mb-3')}}
 
-                  <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
-                    {{form.karbo.label(class='form-control-label mb-1')}}
-                    {{form.karbo(class='form-control mb-3')}}
+                    </div>
+
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.albumin.label(class='form-control-label mb-1')}}
+                      {{form.albumin(class='form-control mb-3')}}
+
+                      {{form.kreatinin.label(class='form-control-label mb-1')}}
+                      {{form.kreatinin(class='form-control mb-3')}}
+
+                      {{form.hematokrit.label(class='form-control-label mb-1')}}
+                      {{form.hematokrit(class='form-control mb-3')}}
+
+                      {{form.limfosit.label(class='form-control-label mb-1')}}
+                      {{form.limfosit(class='form-control mb-3')}}
+
+                      {{form.trombosit.label(class='form-control-label mb-1')}}
+                      {{form.trombosit(class='form-control mb-3')}}
+
+                      {{form.ver_mvc.label(class='form-control-label mb-1')}}
+                      {{form.ver_mvc(class='form-control mb-3')}}
+
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
 
-          
-            <div class="submit-button">
-              {{form.analisa(class="btn btn-success mt-3 mb-3 mx-2 px-2 pt-2 pb-2")}}
-              <!-- {{form.hasil_pdf(class="btn btn-warning mt-3 mb-3 mx-2 px-2 pt-2 pb-2")}} -->
-              {{form.pdf_form(class="btn btn-danger mt-3 mb-3  px-2 pt-2 pb-2")}}
-            </div>
-
-            
 
 
-        </form>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  DATA FISIK KLINIS
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="row mx-1">
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.tekanan_darah.label(class='form-control-label mb-1')}}
+                      {{form.tekanan_darah(class='form-control mb-3')}}
+
+                      {{form.suhu.label(class='form-control-label mb-1')}}
+                      {{form.suhu(class='form-control mb-3')}}
+                    </div>
+
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.respirasi.label(class='form-control-label mb-1')}}
+                      {{form.respirasi(class='form-control mb-3')}}
+
+                      {{form.nadi.label(class='form-control-label mb-1')}}
+                      {{form.nadi(class='form-control mb-3')}}
+
+                      {{form.luka_bakar.label(class='form-control-label mb-1')}}
+                      {{form.luka_bakar(class='form-control mb-3')}}
+                    </div>
+
+                    <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                      {{form.masalah_oral.label(class='form-control-label mb-1')}}
+                      {{form.masalah_oral(class='form-control mb-3')}}
+
+                      {{form.kelainan_fisik.label(class='form-control-label mb-1')}}
+                      {{form.kelainan_fisik(class='form-control mb-3')}}
+                    </div>
+
+                    <div class="card px-2 mx-2 mb-3 shadow-sm">
+                      {{form.lainnya.label(class='form-control-label mb-1')}}
+                      {{form.lainnya(class='form-control mb-3')}}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    DATA RIWAYAT MAKAN/ASUPAN
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="row mx-1">
+                      <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                        {{form.energi.label(class='form-control-label mb-1')}}
+                        {{form.energi(class='form-control mb-3')}}
+                      </div>
+
+                      <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                        {{form.protein.label(class='form-control-label mb-1')}}
+                        {{form.protein(class='form-control mb-3')}}
+
+                      </div>
+
+                      <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                        {{form.lemak.label(class='form-control-label mb-1')}}
+                        {{form.lemak(class='form-control mb-3')}}
+                      </div>
+
+                      <div class="card px-2 mx-2 mb-3 col-sm shadow-sm">
+                        {{form.karbo.label(class='form-control-label mb-1')}}
+                        {{form.karbo(class='form-control mb-3')}}
+                      </div>
+
+                      <div class="card px-2 mx-2 mb-3  shadow-sm">
+                        {{form.kebiasaan_makan.label(class='form-control-label mb-1')}}
+                        {{form.kebiasaan_makan(class='form-control mb-3')}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="submit-button d-grid gap-2">
+                {{form.analisa(class="btn btn-success btn-lg mt-3 mx-4 px-5 pt-2 pb-2")}}
+                {{form.pdf_form(class="btn btn-danger btn-lg mx-4 mb-5 px-5 pt-2 pb-2")}}
+              </div>
+
+          </form>
+        </div>
       </div>
     </div>
   </div>

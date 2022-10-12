@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <div class="upload-csv pt-1 mt-3 mb-1 pb-1">
+    <div class="upload-csv pt-1 mt-3 mb-5 pb-1">
         <div class="card shadow-sm mb-1 mx-3">
             <div class="card-body">
                 <h5 class="card-title">UPLOAD CSV FILE</h5>
@@ -48,7 +48,10 @@
                         {{form.csv.label(class='form-control-label mb-1')}}
                         {{form.csv(class='csv form-control mb-3', type='file')}}
                     </div>
-                    {{form.analisa(class='analisa btn btn-success')}}
+
+                    <div class="submit-button d-grid gap-2">
+                        {{form.analisa(class='analisa btn btn-lg btn-success')}}
+                    </div>
             </div>
             </form>
         </div>
@@ -221,19 +224,23 @@
                             <ul class="list-group">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     ENERGI
-                                    <span class="badge bg-info text-dark  fs-6">{{kurus['energi'].mean().round(0)}}</span>
+                                    <span
+                                        class="badge bg-info text-dark  fs-6">{{kurus['energi'].mean().round(0)}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     PROTEIN
-                                    <span class="badge bg-info text-dark  fs-6">{{kurus['protein'].mean().round(0)}}</span>
+                                    <span
+                                        class="badge bg-info text-dark  fs-6">{{kurus['protein'].mean().round(0)}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     LEMAK
-                                    <span class="badge bg-info text-dark  fs-6">{{kurus['lemak'].mean().round(0)}}</span>
+                                    <span
+                                        class="badge bg-info text-dark  fs-6">{{kurus['lemak'].mean().round(0)}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     KARBO
-                                    <span class="badge bg-info text-dark  fs-6">{{kurus['karbo'].mean().round(0)}}</span>
+                                    <span
+                                        class="badge bg-info text-dark  fs-6">{{kurus['karbo'].mean().round(0)}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -243,19 +250,23 @@
                             <ul class="list-group">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     ENERGI
-                                    <span class="badge bg-info text-dark  fs-6">{{ideal['energi'].mean().round(0)}}</span>
+                                    <span
+                                        class="badge bg-info text-dark  fs-6">{{ideal['energi'].mean().round(0)}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     PROTEIN
-                                    <span class="badge bg-info text-dark  fs-6">{{ideal['protein'].mean().round(0)}}</span>
+                                    <span
+                                        class="badge bg-info text-dark  fs-6">{{ideal['protein'].mean().round(0)}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     LEMAK
-                                    <span class="badge bg-info text-dark  fs-6">{{ideal['lemak'].mean().round(0)}}</span>
+                                    <span
+                                        class="badge bg-info text-dark  fs-6">{{ideal['lemak'].mean().round(0)}}</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     KARBO
-                                    <span class="badge bg-info text-dark  fs-6">{{ideal['karbo'].mean().round(0)}}</span>
+                                    <span
+                                        class="badge bg-info text-dark  fs-6">{{ideal['karbo'].mean().round(0)}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -274,19 +285,23 @@
                             <ul class="list-group">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     ENERGI
-                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['energi'].mean().round(0)}} kkal</span>
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['energi'].mean().round(0)}}
+                                        kkal</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     PROTEIN
-                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['protein'].mean().round(0)}} gr</span>
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['protein'].mean().round(0)}}
+                                        gr</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     LEMAK
-                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['lemak'].mean().round(0)}} gr</span>
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['lemak'].mean().round(0)}}
+                                        gr</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     KARBO
-                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['karbo'].mean().round(0)}} gr</span>
+                                    <span class="badge bg-info text-dark  fs-6">{{gemuk['karbo'].mean().round(0)}}
+                                        gr</span>
                                 </li>
                             </ul>
                         </div>
@@ -296,19 +311,23 @@
                             <ul class="list-group">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     ENERGI
-                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['energi'].mean().round(0)}} kkal</span>
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['energi'].mean().round(0)}}
+                                        kkal</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     PROTEIN
-                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['protein'].mean().round(0)}} gr</span>
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['protein'].mean().round(0)}}
+                                        gr</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     LEMAK
-                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['lemak'].mean().round(0)}} gr</span>
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['lemak'].mean().round(0)}}
+                                        gr</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     KARBO
-                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['karbo'].mean().round(0)}} gr</span>
+                                    <span class="badge bg-info text-dark  fs-6">{{obesitas['karbo'].mean().round(0)}}
+                                        gr</span>
                                 </li>
                             </ul>
                         </div>
@@ -316,7 +335,7 @@
                 </div>
             </div>
         </div>
-       
+
     </div>
     <div class="product-title d-flex justify-content-center mt-4 mb-1">
         <h3 class="display-6">
@@ -354,11 +373,13 @@
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 ENERGI
-                                <span class="badge bg-info text-dark  fs-6">{{data['energi'].mean().round(0)}} kkal</span>
+                                <span class="badge bg-info text-dark  fs-6">{{data['energi'].mean().round(0)}}
+                                    kkal</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 PROTEIN
-                                <span class="badge bg-info text-dark  fs-6">{{data['protein'].mean().round(0)}} gr</span>
+                                <span class="badge bg-info text-dark  fs-6">{{data['protein'].mean().round(0)}}
+                                    gr</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 LEMAK

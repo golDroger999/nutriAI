@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import (StringField, IntegerField, FloatField, SubmitField, SelectField, SelectMultipleField, widgets)
+from wtforms import (StringField, IntegerField, FloatField, SubmitField, SelectField, SelectMultipleField, widgets, TextAreaField)
 from wtforms.validators import (DataRequired, Email)
 from flask import (request, render_template)
 
@@ -17,6 +17,8 @@ class pagtform(FlaskForm):
     pekerjaan = StringField('Pekerjaan (Boleh Dikosongkan)')
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
+    
+    catatan_personal = TextAreaField('Catatan Personal', render_kw={'rows':5})
     
     aktivitas = SelectField('Aktivitas',
                             choices=[
@@ -65,14 +67,20 @@ class pagtform(FlaskForm):
     kalium = IntegerField('Kalium')
     klorida = IntegerField('Klorida')
     ver_mvc = IntegerField('Ver(Mvc)')
-    
+    kreatinin = IntegerField('kreatinin')
+    limfosit = IntegerField('Limfosit')
+    albumin = IntegerField('Albumin')
+    trombosit = IntegerField('Trombosit')
+    hematokrit = IntegerField('Hematokrit')
+    leukosit = IntegerField('Leukosit')
+    natrium = IntegerField('Natrium')
     # AKHIR DATA BIOKIMIA
     
     
     
     
     # DATA FISIK KLINIS
-    tekanan_darah = IntegerField('Tekanan Darah')
+    tekanan_darah = IntegerField('Tekanan Darah (mmhg)')
     suhu = IntegerField('Suhu Tubuh (C)')
     nadi = IntegerField('Denyut Nadi (kali / Menit)')
     respirasi = IntegerField('Respiratory Rate (menit)')
@@ -87,7 +95,7 @@ class pagtform(FlaskForm):
                                             ])
     
     
-    luka_bakar = IntegerField('Luka Bakar (%) ditulis desimal')
+    luka_bakar = IntegerField('Luka Bakar (jika ada) % ditulis desimal')
     
     kelainan_fisik = MultiCheckboxField('Kelainan Pada Fisik/Klinis',
                                         choices=[
@@ -98,6 +106,9 @@ class pagtform(FlaskForm):
                                             'sesak napas/napas tidak lancar',
                                             'kesadaran lemah/tidak sadar'
                                             ]) 
+    
+    lainnya = TextAreaField('Lain-lainnya', render_kw={'rows':5})
+
 
     # AKHIR DATA FISIK KLINIS
     
@@ -107,9 +118,30 @@ class pagtform(FlaskForm):
     protein = IntegerField('Riwayat Protein (gr)')
     lemak = IntegerField('Riwayat Lemak (gr)')
     karbo = IntegerField('Riwayat Karbohidrat (gr)')
+    kebiasaan_makan = TextAreaField('Riwayat Kebiasaan Makan', render_kw={'rows':5})
+
     # AKHIR DATA RIWAYAT MAKAN / ASUPAN
      
+     
+    #  FORMULIR INPUT INTERVENSI DAN DIAGNOSA DAN PRESPEKTIF DIET OPSIONAL
+    
+    # diagnosa
+    problem = TextAreaField('Problem')
+    etiologi = TextAreaField('Etiologi')
+    sign_tom = TextAreaField('Sign/Signtom')
+    # akhir diagnosa
+    
+    # intervensi
+    tujuan = TextAreaField('Tujuan')
+    cara = TextAreaField('Cara')
+    target = TextAreaField('Target')
+    # akhir intervensi
+    
+    # AKHIR FORMULIR INPUT INTERVENSI DAN DIAGNOSA DAN PRESPEKTIF DIET OPSIONAL
+    
+    
+    
     
     analisa = SubmitField('Analisa')
     hasil_pdf = SubmitField('Print Hasil Pdf')
-    pdf_form = SubmitField('Print Form')
+    pdf_form = SubmitField('Save Data')
