@@ -1,6 +1,6 @@
 from flask import (render_template, redirect, request, Blueprint, url_for, make_response)
 from web.spreadsheet.form import csv_form
-from web.spreadsheet.rumusgizi import HitungGiziKelompok as hgk 
+from web.func_rumus.rumusgizikelompok import HitungGiziKelompok as hgk 
 import pandas as pd
 import numpy as np
 

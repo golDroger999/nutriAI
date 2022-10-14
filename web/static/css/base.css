@@ -50,6 +50,10 @@ nav{
 }
 
 
+.pagt-item .card{
+    background:rgba(245, 245, 245, 0.827);
+}
+
 .product-sevice{
     justify-content: center;
     align-items: center;
