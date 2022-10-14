@@ -53,7 +53,7 @@ class pagtform(FlaskForm):
     kolesterol = IntegerField('Kolesterol Total')
     sgot = IntegerField('Sgot')
     sgpt = IntegerField('Sgpt')
-    bun = IntegerField('bun')
+    bun = IntegerField('Bun')
     bilirubin_direk = IntegerField('Bilirubin Direk')
     bilirubin_indirek = IntegerField('Bilirubin inDirek')
     bilirubin_total = IntegerField('Bilirubin Total')
@@ -118,7 +118,7 @@ class pagtform(FlaskForm):
     protein = IntegerField('Riwayat Protein (gr)')
     lemak = IntegerField('Riwayat Lemak (gr)')
     karbo = IntegerField('Riwayat Karbohidrat (gr)')
-    kebiasaan_makan = TextAreaField('Riwayat Kebiasaan Makan', render_kw={'rows':5})
+    kebiasaan_makan = TextAreaField('Riwayat Kebiasaan Makan (Jika ada)', render_kw={'rows':5})
 
     # AKHIR DATA RIWAYAT MAKAN / ASUPAN
      
