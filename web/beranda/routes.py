@@ -59,7 +59,8 @@ def dubois_page():
         nama = request.form.get('nama')
         
         rendered = render_template('report.html', nama=nama, bb=bb, tb=tb, umur=umur, 
-                                gender=gender, makro=makro, mikro=mikro, permakan=permakan)
+                                gender=gender, makro=makro, mikro=mikro, permakan=permakan, 
+                                energi=makro.energi(), bmr=makro.bmr())
         
         pdf = pdfkit.from_string(rendered)
         response =  make_response(pdf)
@@ -110,7 +111,8 @@ def harris_bennedict_page():
         nama = request.form.get('nama')
         
         rendered = render_template('report.html', nama=nama, bb=bb, tb=tb, umur=umur, 
-                                gender=gender, makro=makro, mikro=mikro, permakan=permakan)
+                                gender=gender, makro=makro, mikro=mikro, permakan=permakan, 
+                                energi=makro.tee(), bmr=makro.bee())
         
         pdf = pdfkit.from_string(rendered)
         response =  make_response(pdf)
@@ -161,7 +163,8 @@ def mifflin_page():
         nama = request.form.get('nama')
     
         rendered = render_template('report.html', nama=nama, bb=bb, tb=tb, umur=umur, 
-                           gender=gender, makro=makro, mikro=mikro, permakan=permakan)
+                           gender=gender, makro=makro, mikro=mikro, permakan=permakan, 
+                           energi=makro.tee(), bmr=makro.bee())
         
         pdf = pdfkit.from_string(rendered)
         response =  make_response(pdf)

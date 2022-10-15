@@ -51,7 +51,8 @@ nav{
 
 
 .pagt-item .card{
-    background:rgba(245, 245, 245, 0.827);
+    background:#8bb1e048;
+
 }
 
 .product-sevice{
@@ -70,7 +71,7 @@ nav{
 }
 
 .dubois-form .container-fluid .card{
-    background: rgb(218, 219, 245);
+    background: rgba(218, 219, 245, 0.818);
     width: max-content;
     height: max-content;
     /* background: linear-gradient(135deg, rgba(184, 179, 250, 0.747) 10%, rgba(214, 208, 126, 0.644) 100%); */
