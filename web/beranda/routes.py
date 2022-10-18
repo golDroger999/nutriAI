@@ -1,11 +1,10 @@
 from flask import (render_template, redirect, request, Blueprint, url_for, make_response)
 from web.beranda.form import (FormDubois, FormHarrisBenneedict, FormMifflin, FormPerkeni, FormHamil, FormMenyusui)
-import pandas as pd
+from web.func_rumus.mikro import (gizimikro, gizimikro_hamil, gizimikro_menyusui)
 from web.func_rumus.harris import harris
 from web.func_rumus.dubois import dubois
 from web.func_rumus.mifflin import mifflin
 from web.func_rumus.makan import makan
-from web.func_rumus.mikro import (gizimikro, gizimikro_hamil, gizimikro_menyusui)
 import pdfkit
 
 
@@ -41,7 +40,7 @@ def dubois_page():
     tidur =''
     aktivitas = ''
     
-    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form  and 'aktivitas' in request.form  and 'tidur' in request.form:
+    if request.method == 'POST':
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))
@@ -94,7 +93,7 @@ def harris_bennedict_page():
     aktivitas = ''
     stress = ''
     
-    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form and 'stress' in request.form and 'aktivitas' in request.form:
+    if request.method == 'POST':
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))
@@ -146,7 +145,7 @@ def mifflin_page():
     stress = ''
 
     
-    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form and 'stress' in request.form and 'aktivitas' in request.form:
+    if request.method == 'POST':
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))
@@ -243,7 +242,7 @@ def perkeni_page():
     klor =''
     tembaga=''
     
-    if request.method == 'POST' and 'bb' in request.form and 'tb' in request.form and 'umur' in request.form and 'gender' in request.form  and 'aktivitas' in request.form:
+    if request.method == 'POST': 
         bb = float(request.form.get('bb'))
         tb = float(request.form.get('tb'))
         umur = int(request.form.get('umur'))

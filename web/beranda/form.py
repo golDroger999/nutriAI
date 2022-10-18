@@ -24,7 +24,7 @@ class FormDubois(FlaskForm):
 # FORM HARRIS BENEDICT
 class FormHarrisBenneedict(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
-    umur = IntegerField('Umur (dalam tahun)', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur (dalam tahun, min 10)', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
@@ -38,7 +38,7 @@ class FormHarrisBenneedict(FlaskForm):
 # FORM MIFFLIN
 class FormMifflin(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
-    umur = IntegerField('Umur (dalam tahun)', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur (dalam tahun, min 10)', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = FloatField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
@@ -52,7 +52,7 @@ class FormMifflin(FlaskForm):
 # FORM PERKENI
 class FormPerkeni(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
-    umur = IntegerField('Umur (dalam tahun)', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur (dalam tahun, min 10)', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = FloatField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
@@ -65,7 +65,7 @@ class FormPerkeni(FlaskForm):
 # FORM IBU HAMIL    
 class FormHamil(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
-    umur = IntegerField('Umur (dalam tahun)', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur (dalam tahun, min 10)', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
@@ -80,7 +80,7 @@ class FormHamil(FlaskForm):
 # FORM IBU MENYUSUI 
 class FormMenyusui(FlaskForm):
     nama = StringField('Nama', validators=[DataRequired(message='data harus diisi')])
-    umur = IntegerField('Umur (dalam tahun)', validators=[DataRequired(message='data harus diisi')])
+    umur = IntegerField('Umur (dalam tahun, min 10)', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
     aktivitas = IntegerField('Aktivitas', validators=[DataRequired(message='data harus diisi')])
@@ -93,7 +93,7 @@ class FormMenyusui(FlaskForm):
 
 # FORM GIZI PENYAKIT GINJAL
 class FormGinjal(FlaskForm):
-    nama = StringField('Nama (dalam tahun)', validators=[DataRequired(message='data harus diisi')])
+    nama = StringField('Nama (dalam tahun, min 10)', validators=[DataRequired(message='data harus diisi')])
     umur = IntegerField('Umur', validators=[DataRequired(message='data harus diisi')])
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
