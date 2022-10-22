@@ -6,7 +6,7 @@ import numpy as np
 
 
 
-sheet = Blueprint('sheet', __name__)
+sheet = Blueprint('sheet', __name__,template_folder='templates')
 
 
 # HALAMAN DASHBOARD CSV

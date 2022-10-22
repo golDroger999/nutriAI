@@ -1,8 +1,14 @@
 from flask import (render_template, redirect, request, Blueprint, url_for, make_response)
+from web.func_rumus import harris
+from web.func_rumus import makan
+from web.func_rumus import gizimikro
+from web.func_rumus import biokimia
+from web.func_rumus import fisik_klinis
 from web.pagt.form import pagtform
 
 
-pagt = Blueprint('pagt', __name__)
+pagt = Blueprint('pagt', __name__,template_folder='templates')
+
 
 
 @pagt.route('/masuk')
@@ -16,10 +22,12 @@ def daftar():
 @pagt.route('/pagt-form', methods=['POST', 'GET'])
 def pagt_page():
     form = pagtform()
-    
+    data_diri = ''
     energi = ''
     gizi_makro = ''
-    permakan = ''
+    mikro = ''
+    permakan_harris = ''
+    harris = ''
     
     bb = ''
     tb = ''
@@ -66,8 +74,10 @@ def pagt_page():
     luka_bakar = ''
     kelainan_klinis = ''
     
+    riwayat_energi = ''
+    
     biokimia = ''
-    fisik_klinis = ''
+    fisik = ''
     riwayat_asupan = ''
     
     
@@ -117,19 +127,36 @@ def pagt_page():
         kelainan_klinis = (request.form.get('kelainan_klinis'))
         
         
+        
     # Antropometri handel
+        data_diri = {'bb':bb, 'tb':tb, 'gender':gender, 'aktivitas':aktivitas, 'stress':stress}
     
     # perhitungan gizi handle
+        makro = gizimikro(umur=umur, gender=gender)
+        harris = harris(bb=bb, tb=tb, umur=umur, gender=gender, aktivitas=aktivitas, stress=stress)
+        permakan_harris = makan(energi=harris.tee(), protein=harris.protein(), lemak=harris.lemak, karbo=harris.karbo()) 
         
     # Biokimia Handel
+        biokimia = biokimia(umur=umur, gender=gender)
     
     # Fisik Klinis Handel
+        fisik = fisik_klinis()
     
-    # Riwayat Personal Handel
+    # Riwayat Asupan Handel
+    
     
     # Diagnosis Handel
     
     # Intervensi Handel
     
     # Rencana Monev Handel
-    return render_template('pagt.html', tittle='PAGT FORM', form=form)
+    return render_template('pagt.html', tittle='PAGT FORM', form=form, data_diri=data_diri,
+                           harris=harris, permakan_harris=permakan_harris, mikro=mikro,
+                           biokimia=biokimia, fisik_klinis=fisik)
+
+
+
+
+@pagt.route('/logout')
+def logout():
+    pass

@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-dark bg-success fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand btn btn-primary text-light" href="{{url_for('beranda.beranda_page')}}">NUTRIECY </a>
+          <a class="navbar-brand btn btn-primary text-light" href="{{url_for('beranda_routing.beranda.beranda_page')}}">NUTRIECY</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -23,7 +23,9 @@
 
           <div class="offcanvas offcanvas-end text-bg-success" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <a class="nav-link active btn btn-warning mb-3 p-2 shadow-lg" aria-current="page" href="{{url_for('scanner.scanner_page')}}">MASUK/DAFTAR</a>
+              <a class="nav-link active btn btn-sm btn-warning mb-3 mx-1 mt-3 p-1 shadow-lg" aria-current="page" href="#">MASUK MEMBER</a>
+              <a class="nav-link active btn btn-sm btn-warning mb-3 mx-1 mt-3 p-1 shadow-lg" aria-current="page" href="#">DAFTAR MEMBER</a>
+              <a class="nav-link active btn btn-sm btn-warning mb-3 mx-1 mt-3 p-1 shadow-lg" aria-current="page" href="#">DISKUSI MEMBER</a>
               <!-- <h5 class="offcanvas-title btn btn-info" id="offcanvasDarkNavbarLabel">MENU</h5> -->
               <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -31,29 +33,21 @@
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 
                 <li class="nav-item">
-                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="{{url_for('beranda.beranda_page')}}">BERANDA</a>
+                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="{{url_for('beranda_routing.beranda.beranda_page')}}">BERANDA</a>
                 </li>
                 
                 <li class="nav-item">
-                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="{{url_for('sheet.csv_page')}}">HITUNG GIZI KELOMPOK</a>
+                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="{{url_for('spreadsheet_routing.sheet.csv_page')}}">HITUNG GIZI KELOMPOK</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="{{url_for('pagt.pagt_page')}}">FORM ASUHAN GIZI KLINIK</a>
+                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="{{url_for('pagt_routing .pagt.pagt_page')}}">FORM ASUHAN GIZI KLINIK</a>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="{{url_for('scanner.scanner_page')}}">SCAN FORM</a>
+                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="{{url_for('scanner_routing .scanner.scanner_page' )}}">SCAN FORM</a>
                 </li>
 
-                <!-- <li class="nav-item">
-                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" aria-current="page" href="#">LOGIN/SIGN-UP</a>
-                </li> -->
-                
-
-                <!-- <li class="nav-item">
-                  <a class="nav-link active btn btn-danger shadow-lg  mb-3" href="#">Forum Diskusi</a>
-              </li> -->
                 </ul>
             </div>
           </div>

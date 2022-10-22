@@ -17,6 +17,7 @@ class pagtform(FlaskForm):
     pekerjaan = StringField('Pekerjaan (Boleh Dikosongkan)')
     bb = IntegerField('Berat Badan (dalam kg)', validators=[DataRequired(message='data harus diisi')])
     tb = IntegerField('Tinggi Badan (dalam cm)', validators=[DataRequired(message='data harus diisi')])
+    lila = IntegerField('Lingkar Lengan Atas (dalam cm)', validators=[DataRequired(message='data harus diisi')])
     
     catatan_personal = TextAreaField('Catatan Personal Lain-lainnya (Jika ada)', render_kw={'rows':5})
     
@@ -37,7 +38,9 @@ class pagtform(FlaskForm):
                                'autis', 'batu ginjal', 'sindrom nefrotik', 
                                 'gagal ginjal akut', 'batu empedu', 'sirosis hepatik', 
                                 'pasca bedah', 'diabetes melitus', 'diabetes melitus tipe 2',
-                                'hiv/aids', 'alergi', 'gout artritis', 'luka bakar'
+                                'hiv/aids', 'alergi', 'gout artritis', 'luka bakar', 
+                                'penyakit saluran ceran atas', 'penyakit saluran cerna bawah',
+                                'kanker', 'penyakit autoimun (lupus)', 'ablasi tiroid'
                                 ])
     
     gender = SelectField('Gender', choices=['pria', 'wanita'])

@@ -1,10 +1,11 @@
 class perkeni():
     
-    def __init__(self, bb, tb, usia, jenis_kelamin):
+    def __init__(self, bb, tb, umur, gender, aktivitas):
         self.bb = bb
         self.tb = tb
-        self.usia = usia
-        self.jenis_kelamin = jenis_kelamin
+        self.umur = umur
+        self.gender = gender
+        self.aktivitas = aktivitas
     
     
     
@@ -15,27 +16,19 @@ class perkeni():
 
 
     def bbi(self):
-        if self.jenis_kelamin == 'pria':
-            bbi = 0.9 * (self.tb - 100)
-        
-        elif self.jenis_kelamin == 'wanita':
-            bbi = 0.9 * (self.tb - 100) 
-        
+        bbi = 0.9 * (self.tb - 100) 
         return round(bbi,2)        
     
     
     
     def bmr(self):
-        if self.jenis_kelamin == 'pria':
-            bbi = 0.9 * (self.tb - 100)
         
-        elif self.jenis_kelamin == 'wanita':
-            bbi = 0.9 * (self.tb - 100)
+        bbi = 0.9 * (self.tb - 100)
         
-        if self.jenis_kelamin == 'pria'   :
+        if self.gender == 'pria'   :
             bmr = 30 * bbi
         
-        elif self.jenis_kelamin == 'wanita':
+        elif self.gender == 'wanita':
             bmr = 25 * bbi
         
         return round(bmr,2)
@@ -43,20 +36,28 @@ class perkeni():
 
 
     
-    def total_energi(self, aktivitas, faktor_usia):
-        if self.jenis_kelamin == 'pria':
-            bbi = 0.9 * (self.tb - 100)
+    def energi(self):
+        if self.umur < 41:
+            faktor_usia = 0 
+
+        elif self.umur < 60:
+            faktor_usia = 0.05
+            
+        elif self.umur < 70:
+            faktor_usia = 0.10
+            
+        elif self.umur > 69:
+            faktor_usia = 0.15
+
+        bbi = 0.9 * (self.tb - 100)
         
-        elif self.jenis_kelamin == 'wanita':
-            bbi = 0.9 * (self.tb - 100)
-        
-        if self.jenis_kelamin == 'pria'   :
+        if self.gender == 'pria'   :
             bmr = 30 * bbi
         
-        elif self.jenis_kelamin == 'wanita':
+        elif self.gender == 'wanita':
             bmr = 25 * bbi
         
-        energi = (bmr + aktivitas) - faktor_usia
+        energi = (bmr + self.aktivitas) - faktor_usia
         
         return round(energi,2)
     
@@ -64,22 +65,29 @@ class perkeni():
     
     
     
-    def protein(self, aktivitas, faktor_usia):
+    def protein(self):
+        if self.umur < 41:
+            faktor_usia = 0 
+
+        elif self.umur < 60:
+            faktor_usia = 0.05
+            
+        elif self.umur < 70:
+            faktor_usia = 0.10
+            
+        elif self.umur > 69:
+            faktor_usia = 0.15
+            
+        bbi = 0.9 * (self.tb - 100)
         
-        if self.jenis_kelamin == 'pria':
-            bbi = 0.9 * (self.tb - 100)
-        
-        elif self.jenis_kelamin == 'wanita':
-            bbi = 0.9 * (self.tb - 100)
-        
-        if self.jenis_kelamin == 'pria'   :
+        if self.gender == 'pria'   :
             bmr = 30 * bbi
         
-        elif self.jenis_kelamin == 'wanita':
+        elif self.gender == 'wanita':
             bmr = 25 * bbi
         
-        energi = (bmr + aktivitas) - faktor_usia
-    
+        energi = (bmr + self.aktivitas) - faktor_usia    
+        
         protein = (0.15 * energi)/4
         
         return round(protein,2)
@@ -88,22 +96,29 @@ class perkeni():
     
     
     
-    def lemak(self, aktivitas, faktor_usia):
-    
-        if self.jenis_kelamin == 'pria':
-            bbi = 0.9 * (self.tb - 100)
+    def lemak(self):
+        if self.umur < 41:
+            faktor_usia = 0 
+
+        elif self.umur < 60:
+            faktor_usia = 0.05
+            
+        elif self.umur < 70:
+            faktor_usia = 0.10
+            
+        elif self.umur > 69:
+            faktor_usia = 0.15
+            
+        bbi = 0.9 * (self.tb - 100)
         
-        elif self.jenis_kelamin == 'wanita':
-            bbi = 0.9 * (self.tb - 100)
-        
-        if self.jenis_kelamin == 'pria'   :
+        if self.gender == 'pria'   :
             bmr = 30 * bbi
         
-        elif self.jenis_kelamin == 'wanita':
+        elif self.gender == 'wanita':
             bmr = 25 * bbi
         
-        energi = (bmr + aktivitas) - faktor_usia
-
+        energi = (bmr + self.aktivitas) - faktor_usia
+        
         lemak = (0.25 * energi)/9
         
         return round(lemak,2)
@@ -111,23 +126,30 @@ class perkeni():
     
     
     
-    def karbohidrat(self, aktivitas, faktor_usia):
-    
-        if self.jenis_kelamin == 'pria':
-            bbi = 0.9 * (self.tb - 100)
+    def karbo(self):
+        if self.umur < 41:
+            faktor_usia = 0 
+
+        elif self.umur < 60:
+            faktor_usia = 0.05
+            
+        elif self.umur < 70:
+            faktor_usia = 0.10
+            
+        elif self.umur > 69:
+            faktor_usia = 0.15
+            
+        bbi = 0.9 * (self.tb - 100)
         
-        elif self.jenis_kelamin == 'wanita':
-            bbi = 0.9 * (self.tb - 100)
-        
-        if self.jenis_kelamin == 'pria'   :
+        if self.gender == 'pria'   :
             bmr = 30 * bbi
         
-        elif self.jenis_kelamin == 'wanita':
+        elif self.gender == 'wanita':
             bmr = 25 * bbi
         
-        energi = (bmr + aktivitas) - faktor_usia
-
-        karbohidrat = (0.65 * energi)/4
+        energi = (bmr + self.aktivitas) - faktor_usia
+        
+        karbohidrat = (0.60 * energi)/4
         
         return round(karbohidrat,2)
 

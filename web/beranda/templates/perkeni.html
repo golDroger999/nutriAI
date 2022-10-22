@@ -1,0 +1,303 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="dubois-form pt-5 mt-5 mx-2 mb-5 pb-5">
+    <h5 class="card-title display-6 d-flex justify-content-center pt-2 pb-4">PERKENI 2015 FORM</h5>
+    <div class="container-fluid d-flex justify-content-center">
+
+        <div class="card shadow-sm mt-2 mb-2" style="width: 20rem;">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <!-- <h5 class="card-title display-6">DUBOIS FORM</h5> -->
+
+                <form method="post" action="">
+                    <div class="form-input-dubois">
+                        {{form.nama.label(class='form-control-label mb-1')}}
+                        {{form.nama(class='nama form-control mb-3', type='text')}}
+
+                        {{form.umur.label(class='form-control-label mb-1')}}
+                        {{form.umur(class='umur form-control mb-3', type='number')}}
+
+                        {{form.bb.label(class='form-control-label mb-1')}}
+                        {{form.bb(class='bb form-control mb-3', type='number', step='0.1')}}
+
+                        {{form.tb.label(class='form-control-label mb-2')}}
+                        {{form.tb(class='tb form-control mb-3', type='number', step='0.1')}}
+
+                        {{form.aktivitas.label(class='form-control-label mb-1')}}
+                        {{form.aktivitas(class='aktivitas form-control mb-3', step='0.1')}}
+
+                        {{form.gender.label(class='form-control-label mb-1')}}
+                        {{form.gender(class='gender form-control mb-3', type='text')}}
+
+                        <div class="button-submit">
+                            {{form.hitung(class='hitung btn btn-success', type='submit')}}
+                            {{form.laporan(class='laporan btn btn-danger', type='submit')}}
+                            <!-- {{form.save(class='btn btn-warning')}} -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        {% if request.form.get('hitung') %}
+        <div class="result row mx-1 px-1 mt-2">
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
+                <div class="card-header">
+                    HASIL KEBUTUHAN GIZI UNTUK SATU HARI
+                </div>
+
+                <h4> DATA ANTROPOMETRI </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BERAT BADAN
+                        <span class="badge bg-info text-dark  fs-6">{{bb}} kg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        TINGGI BADAN
+                        <span class="badge bg-info text-dark  fs-6">{{tb}} cm</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        UMUR
+                        <span class="badge bg-info text-dark  fs-6">{{umur}} tahun</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        GENDER
+                        <span class="badge bg-info text-dark  fs-6">{{gender}}</span>
+                    </li>
+                </ul>
+
+
+                <h4 class="mt-2"> HASIL ANALISA </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        IMT
+                        <span class="badge bg-info text-dark  fs-6">{{makro.imt()}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BBI
+                        <span class="badge bg-info text-dark  fs-6">{{makro.bbi()}} kg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BMR
+                        <span class="badge bg-info text-dark  fs-6">{{makro.bmr()}} kkal</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ENERGI
+                        <span class="badge bg-info text-dark  fs-6">{{makro.energi()}} kkal</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PROTEIN
+                        <span class="badge bg-info text-dark  fs-6">{{makro.protein()}} gr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        LEMAK
+                        <span class="badge bg-info text-dark  fs-6">{{makro.lemak()}} gr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KARBO
+                        <span class="badge bg-info text-dark  fs-6">{{makro.karbo()}} gr</span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
+                <div class="card-header">
+                    HASIL KEBUTUHAN GIZI UNTUK SEKALI MAKAN
+                </div>
+                <ul class="list-group">
+                    <h4>MAKAN PAGI</h4>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ENERGI
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['energi_pagi']}} kkal</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PROTEIN
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['protein_pagi']}} gr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        LEMAK
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['lemak_pagi']}} gr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KARBO
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['karbo_pagi']}} gr</span>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                    <h4 class="mt-2">MAKAN SIANG</h4>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ENERGI
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['energi_pagi']}} kkal</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PROTEIN
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['protein_pagi']}} gr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        LEMAK
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['lemak_pagi']}} gr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KARBO
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['karbo_pagi']}} gr</span>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                    <h4 class="mt-2">MAKAN MALAM</h4>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ENERGI
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['energi_malam']}} kkal</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PROTEIN
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['protein_malam']}} gr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        LEMAK
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['lemak_malam']}} gr</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KARBO
+                        <span class="badge bg-info text-dark  fs-6">{{permakan['karbo_malam']}} gr</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="card mx-2 mb-3 pb-5" style="width: 18rem;">
+                <div class="card-header">
+                    KEBUTUHAN GIZI MIKRO AKG MENURUT UMUR
+                </div>
+
+                <h4> VITAMIN </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN A
+                        <span class="badge bg-info text-dark  fs-6">{{mikro.vitamin_a()}} re</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN D
+                        <span class="badge bg-info text-dark  fs-6">{{mikro.vitamin_d()}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN E
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_e()}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN K
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_k()}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B1
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_b1()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B2
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_b2()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B3
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_b3()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B5
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_b5()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B6
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_b6()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN B12
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_b12()}} mcg</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        FOLAT
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.folat()}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BIOTIN
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.biotin()}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KOLIN
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.kolin()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        VITAMIN C
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.vitamin_c()}} mg</span>
+                    </li>
+                </ul>
+
+                <h4 class="mt-2"> MINERAL </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KALSIUM
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.kalsium()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        FOSFOR
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.fosfor()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        MAGNESIUM
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.magnesium()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        BESI
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.besi()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        IODIUM
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.iodium()}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        SENG
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.seng()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        SELENIUM
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.selenium()}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        MANGAN
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.mangan()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        FLUOR
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.fluor()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KROMIUM
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.kromium()}} mcg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KALIUM
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.kalium()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        NATRIUM
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.natrium()}}mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        KLOR
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.klor()}} mg</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        TEMBAGA
+                        <span class="badge bg-info text-dark  fs-6"> {{mikro.tembaga()}} mcg</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src=""></script>
+
+    {% endblock %}

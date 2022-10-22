@@ -2,7 +2,7 @@ from flask import (render_template, redirect, Request, Blueprint)
 from web.scanform.form import document
 
 
-scanner = Blueprint('scanner', __name__)
+scanner = Blueprint('scanner', __name__, template_folder='templates')
 
 
 @scanner.route('/scan-form', methods=['GET', 'POST'])
